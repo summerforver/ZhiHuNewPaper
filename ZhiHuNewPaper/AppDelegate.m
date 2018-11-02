@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZPFMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /**窗口的设置*/
+    [self setWindow:[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds]];
+    /**根视图控制器*/
+    [self.window setRootViewController:[[ZPFMainViewController alloc]init]];
+    /**显示*/
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

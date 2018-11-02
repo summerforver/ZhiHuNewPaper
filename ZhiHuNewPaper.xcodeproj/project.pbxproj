@@ -13,6 +13,26 @@
 		1BD078D3218B1148003C6228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD078D2218B1148003C6228 /* Assets.xcassets */; };
 		1BD078D6218B1148003C6228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD078D4218B1148003C6228 /* LaunchScreen.storyboard */; };
 		1BD078D9218B1148003C6228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078D8218B1148003C6228 /* main.m */; };
+		1BD078E1218B12E6003C6228 /* ZPFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078E0218B12E6003C6228 /* ZPFMainViewController.m */; };
+		1BD078E4218B130C003C6228 /* ZPFLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078E3218B130C003C6228 /* ZPFLeftViewController.m */; };
+		1BD078E7218B1846003C6228 /* ZPFCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */; };
+		1BD078ED218B1B8A003C6228 /* ZPFOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078EC218B1B8A003C6228 /* ZPFOtherViewController.m */; };
+		1BD078F2218B2046003C6228 /* 首页三条线.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD078F1218B2046003C6228 /* 首页三条线.png */; };
+		1BD078F5218B20B7003C6228 /* ZPFCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078F4218B20B7003C6228 /* ZPFCenterView.m */; };
+		1BD078F9218B210B003C6228 /* ZPFScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078F8218B210B003C6228 /* ZPFScrollerView.m */; };
+		1BD078FC218B212A003C6228 /* ZPFNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078FB218B212A003C6228 /* ZPFNewsTableViewCell.m */; };
+		1BD078FF218B2144003C6228 /* ZPFScrollerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078FE218B2144003C6228 /* ZPFScrollerTableViewCell.m */; };
+		1BD07907218B21C1003C6228 /* ZPFCenterTodayJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */; };
+		1BD0790A218B2494003C6228 /* ZPFSelectJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */; };
+		1BD07911218B27B6003C6228 /* 0的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0790C218B27B5003C6228 /* 0的副本.jpg */; };
+		1BD07912218B27B6003C6228 /* 1的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0790D218B27B5003C6228 /* 1的副本.jpg */; };
+		1BD07913218B27B6003C6228 /* 2的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0790E218B27B5003C6228 /* 2的副本.jpg */; };
+		1BD07914218B27B6003C6228 /* 3的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0790F218B27B5003C6228 /* 3的副本.jpg */; };
+		1BD07915218B27B6003C6228 /* 4的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD07910218B27B5003C6228 /* 4的副本.jpg */; };
+		1BD07917218B2BEA003C6228 /* 首页三条线1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD07916218B2BE9003C6228 /* 首页三条线1.png */; };
+		1BD0791A218B2DD1003C6228 /* ZPFSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */; };
+		1BD0791D218B32E2003C6228 /* ZPFCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */; };
+		20991D8B6765C01A7D5B4F00 /* libPods-ZhiHuNewPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +46,40 @@
 		1BD078D5218B1148003C6228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BD078D7218B1148003C6228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD078D8218B1148003C6228 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BD078DF218B12E6003C6228 /* ZPFMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFMainViewController.h; sourceTree = "<group>"; };
+		1BD078E0218B12E6003C6228 /* ZPFMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFMainViewController.m; sourceTree = "<group>"; };
+		1BD078E2218B130C003C6228 /* ZPFLeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFLeftViewController.h; sourceTree = "<group>"; };
+		1BD078E3218B130C003C6228 /* ZPFLeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFLeftViewController.m; sourceTree = "<group>"; };
+		1BD078E5218B1846003C6228 /* ZPFCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCenterViewController.h; sourceTree = "<group>"; };
+		1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCenterViewController.m; sourceTree = "<group>"; };
+		1BD078EB218B1B8A003C6228 /* ZPFOtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFOtherViewController.h; sourceTree = "<group>"; };
+		1BD078EC218B1B8A003C6228 /* ZPFOtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFOtherViewController.m; sourceTree = "<group>"; };
+		1BD078F1218B2046003C6228 /* 首页三条线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页三条线.png"; sourceTree = "<group>"; };
+		1BD078F3218B20B7003C6228 /* ZPFCenterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCenterView.h; sourceTree = "<group>"; };
+		1BD078F4218B20B7003C6228 /* ZPFCenterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCenterView.m; sourceTree = "<group>"; };
+		1BD078F7218B210B003C6228 /* ZPFScrollerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFScrollerView.h; sourceTree = "<group>"; };
+		1BD078F8218B210B003C6228 /* ZPFScrollerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFScrollerView.m; sourceTree = "<group>"; };
+		1BD078FA218B212A003C6228 /* ZPFNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFNewsTableViewCell.h; sourceTree = "<group>"; };
+		1BD078FB218B212A003C6228 /* ZPFNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFNewsTableViewCell.m; sourceTree = "<group>"; };
+		1BD078FD218B2144003C6228 /* ZPFScrollerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFScrollerTableViewCell.h; sourceTree = "<group>"; };
+		1BD078FE218B2144003C6228 /* ZPFScrollerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFScrollerTableViewCell.m; sourceTree = "<group>"; };
+		1BD07905218B21C1003C6228 /* ZPFCenterTodayJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCenterTodayJSONModel.h; sourceTree = "<group>"; };
+		1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCenterTodayJSONModel.m; sourceTree = "<group>"; };
+		1BD07908218B2494003C6228 /* ZPFSelectJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFSelectJsonModel.h; sourceTree = "<group>"; };
+		1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFSelectJsonModel.m; sourceTree = "<group>"; };
+		1BD0790C218B27B5003C6228 /* 0的副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "0的副本.jpg"; sourceTree = "<group>"; };
+		1BD0790D218B27B5003C6228 /* 1的副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1的副本.jpg"; sourceTree = "<group>"; };
+		1BD0790E218B27B5003C6228 /* 2的副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2的副本.jpg"; sourceTree = "<group>"; };
+		1BD0790F218B27B5003C6228 /* 3的副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3的副本.jpg"; sourceTree = "<group>"; };
+		1BD07910218B27B5003C6228 /* 4的副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4的副本.jpg"; sourceTree = "<group>"; };
+		1BD07916218B2BE9003C6228 /* 首页三条线1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页三条线1.png"; sourceTree = "<group>"; };
+		1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFSelectViewController.h; sourceTree = "<group>"; };
+		1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFSelectViewController.m; sourceTree = "<group>"; };
+		1BD0791B218B32E2003C6228 /* ZPFCenterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCenterModel.h; sourceTree = "<group>"; };
+		1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCenterModel.m; sourceTree = "<group>"; };
+		A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHuNewPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A0DA8FF5BC7637B444FEA9 /* Pods-ZhiHuNewPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.debug.xcconfig"; sourceTree = "<group>"; };
+		FDA26D57BFBA193D98052514 /* Pods-ZhiHuNewPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +87,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20991D8B6765C01A7D5B4F00 /* libPods-ZhiHuNewPaper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02EE3007252F41F4998D2D3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9A0DA8FF5BC7637B444FEA9 /* Pods-ZhiHuNewPaper.debug.xcconfig */,
+				FDA26D57BFBA193D98052514 /* Pods-ZhiHuNewPaper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1BD078BD218B113C003C6228 = {
 			isa = PBXGroup;
 			children = (
+				1BD078F0218B2046003C6228 /* ZhiHuDayPaper图片 */,
 				1BD078C8218B113C003C6228 /* ZhiHuNewPaper */,
 				1BD078C7218B113C003C6228 /* Products */,
+				02EE3007252F41F4998D2D3D /* Pods */,
+				6FB88F1853BA2DFE3F84EC02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +127,13 @@
 			children = (
 				1BD078C9218B113C003C6228 /* AppDelegate.h */,
 				1BD078CA218B113C003C6228 /* AppDelegate.m */,
+				1BD078DF218B12E6003C6228 /* ZPFMainViewController.h */,
+				1BD078E0218B12E6003C6228 /* ZPFMainViewController.m */,
+				1BD078E2218B130C003C6228 /* ZPFLeftViewController.h */,
+				1BD078E3218B130C003C6228 /* ZPFLeftViewController.m */,
+				1BD078EE218B1EFF003C6228 /* Main */,
+				1BD078EB218B1B8A003C6228 /* ZPFOtherViewController.h */,
+				1BD078EC218B1B8A003C6228 /* ZPFOtherViewController.m */,
 				1BD078CC218B113C003C6228 /* ViewController.h */,
 				1BD078CD218B113C003C6228 /* ViewController.m */,
 				1BD078CF218B113C003C6228 /* Main.storyboard */,
@@ -71,6 +145,85 @@
 			path = ZhiHuNewPaper;
 			sourceTree = "<group>";
 		};
+		1BD078EE218B1EFF003C6228 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1BD07904218B218D003C6228 /* Model */,
+				1BD078F6218B20C3003C6228 /* View */,
+				1BD078EF218B1F0E003C6228 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1BD078EF218B1F0E003C6228 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD078E5218B1846003C6228 /* ZPFCenterViewController.h */,
+				1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */,
+				1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */,
+				1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BD078F0218B2046003C6228 /* ZhiHuDayPaper图片 */ = {
+			isa = PBXGroup;
+			children = (
+				1BD0790B218B27B5003C6228 /* 轮播图图片 */,
+				1BD078F1218B2046003C6228 /* 首页三条线.png */,
+				1BD07916218B2BE9003C6228 /* 首页三条线1.png */,
+			);
+			path = "ZhiHuDayPaper图片";
+			sourceTree = "<group>";
+		};
+		1BD078F6218B20C3003C6228 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BD078F3218B20B7003C6228 /* ZPFCenterView.h */,
+				1BD078F4218B20B7003C6228 /* ZPFCenterView.m */,
+				1BD078F7218B210B003C6228 /* ZPFScrollerView.h */,
+				1BD078F8218B210B003C6228 /* ZPFScrollerView.m */,
+				1BD078FA218B212A003C6228 /* ZPFNewsTableViewCell.h */,
+				1BD078FB218B212A003C6228 /* ZPFNewsTableViewCell.m */,
+				1BD078FD218B2144003C6228 /* ZPFScrollerTableViewCell.h */,
+				1BD078FE218B2144003C6228 /* ZPFScrollerTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BD07904218B218D003C6228 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BD07905218B21C1003C6228 /* ZPFCenterTodayJSONModel.h */,
+				1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */,
+				1BD07908218B2494003C6228 /* ZPFSelectJsonModel.h */,
+				1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */,
+				1BD0791B218B32E2003C6228 /* ZPFCenterModel.h */,
+				1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BD0790B218B27B5003C6228 /* 轮播图图片 */ = {
+			isa = PBXGroup;
+			children = (
+				1BD0790C218B27B5003C6228 /* 0的副本.jpg */,
+				1BD0790D218B27B5003C6228 /* 1的副本.jpg */,
+				1BD0790E218B27B5003C6228 /* 2的副本.jpg */,
+				1BD0790F218B27B5003C6228 /* 3的副本.jpg */,
+				1BD07910218B27B5003C6228 /* 4的副本.jpg */,
+			);
+			path = "轮播图图片";
+			sourceTree = "<group>";
+		};
+		6FB88F1853BA2DFE3F84EC02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD078DC218B1148003C6228 /* Build configuration list for PBXNativeTarget "ZhiHuNewPaper" */;
 			buildPhases = (
+				A85919A1C63D188382714EB5 /* [CP] Check Pods Manifest.lock */,
 				1BD078C2218B113C003C6228 /* Sources */,
 				1BD078C3218B113C003C6228 /* Frameworks */,
 				1BD078C4218B113C003C6228 /* Resources */,
@@ -128,22 +282,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD07911218B27B6003C6228 /* 0的副本.jpg in Resources */,
+				1BD07914218B27B6003C6228 /* 3的副本.jpg in Resources */,
+				1BD078F2218B2046003C6228 /* 首页三条线.png in Resources */,
 				1BD078D6218B1148003C6228 /* LaunchScreen.storyboard in Resources */,
+				1BD07913218B27B6003C6228 /* 2的副本.jpg in Resources */,
+				1BD07912218B27B6003C6228 /* 1的副本.jpg in Resources */,
+				1BD07915218B27B6003C6228 /* 4的副本.jpg in Resources */,
 				1BD078D3218B1148003C6228 /* Assets.xcassets in Resources */,
+				1BD07917218B2BEA003C6228 /* 首页三条线1.png in Resources */,
 				1BD078D1218B113C003C6228 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A85919A1C63D188382714EB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZhiHuNewPaper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1BD078C2218B113C003C6228 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD078FF218B2144003C6228 /* ZPFScrollerTableViewCell.m in Sources */,
+				1BD078ED218B1B8A003C6228 /* ZPFOtherViewController.m in Sources */,
 				1BD078CE218B113C003C6228 /* ViewController.m in Sources */,
+				1BD0791A218B2DD1003C6228 /* ZPFSelectViewController.m in Sources */,
 				1BD078D9218B1148003C6228 /* main.m in Sources */,
+				1BD078E7218B1846003C6228 /* ZPFCenterViewController.m in Sources */,
+				1BD0791D218B32E2003C6228 /* ZPFCenterModel.m in Sources */,
+				1BD078E4218B130C003C6228 /* ZPFLeftViewController.m in Sources */,
+				1BD078FC218B212A003C6228 /* ZPFNewsTableViewCell.m in Sources */,
+				1BD078E1218B12E6003C6228 /* ZPFMainViewController.m in Sources */,
+				1BD0790A218B2494003C6228 /* ZPFSelectJsonModel.m in Sources */,
+				1BD078F5218B20B7003C6228 /* ZPFCenterView.m in Sources */,
+				1BD07907218B21C1003C6228 /* ZPFCenterTodayJSONModel.m in Sources */,
 				1BD078CB218B113C003C6228 /* AppDelegate.m in Sources */,
+				1BD078F9218B210B003C6228 /* ZPFScrollerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +475,7 @@
 		};
 		1BD078DD218B1148003C6228 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9A0DA8FF5BC7637B444FEA9 /* Pods-ZhiHuNewPaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +492,7 @@
 		};
 		1BD078DE218B1148003C6228 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA26D57BFBA193D98052514 /* Pods-ZhiHuNewPaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
