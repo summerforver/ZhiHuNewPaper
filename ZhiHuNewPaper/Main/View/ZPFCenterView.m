@@ -12,13 +12,15 @@
 #import "ZPFScrollerTableViewCell.h"
 #import "JSONModel.h"
 #import "ZPFScrollerView.h"
+#define ZPFWidth [UIScreen mainScreen].bounds.size.width
+#define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
 @implementation ZPFCenterView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-//        [self creatWeb];
+        [self creatWeb];
         [self creatInternet:@"20181028"];
         [self initView];
     }
@@ -30,7 +32,7 @@
 - (void)initView {
     //    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.bounds.size.width, self.bounds.size.height) style:UITableViewStyleGrouped];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ZPFWidth, ZPFHeight) style:UITableViewStylePlain];
     //    self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[ZPFScrollerTableViewCell class] forCellReuseIdentifier:@"cell1"];
@@ -44,87 +46,88 @@
     
     
     [self addSubview:self.tableView];
-    //    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.top.mas_equalTo(64);
-    //        make.width.mas_equalTo(375);
-    //        make.height.mas_equalTo(667);
-    //    }];
+//        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(64);
+//            make.width.mas_equalTo(375);
+//            make.height.mas_equalTo(667);
+//            make.size.mas_equalTo(self.mas_top);
+//        }];
     
     
-//    self.textViewMutableArray = [[NSMutableArray alloc] init];
-//    self.pictureImageViewMutableArray = [[NSMutableArray alloc] init];
+    self.textViewMutableArray = [[NSMutableArray alloc] init];
+    self.pictureImageViewMutableArray = [[NSMutableArray alloc] init];
     self.nextTextViewMutableArray = [[NSMutableArray alloc] init];
     self.nextPictureImageViewMutableArray = [[NSMutableArray alloc] init];
     
-//    self.scrollerViewMutableArray = [[NSMutableArray alloc] init];
+    self.scrollerViewMutableArray = [[NSMutableArray alloc] init];
     
     
     
 }
 
-//- (void)creatWeb {
-//    dispatch_queue_t queue = dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_SERIAL);
-//    dispatch_async(queue, ^{
-//        NSString *string = @"https://news-at.zhihu.com/api/4/news/latest";
-//        NSString *urlString = [[NSString alloc] init];
-//        urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//        NSURL *url = [NSURL URLWithString:urlString];
-//        NSURLSession *session = [NSURLSession sharedSession];
-//        
-//        NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//            if (data && error ==  nil) {
-//                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//                self.centerTodayJsonModel = [[ZPFCenterTodayJSONModel alloc] initWithDictionary:dic error:nil];
-//                //                NSLog(@"%@", self.centerTodayJsonModel.date);
-//
-//
-//
-//
-//                for (int i = 0; i < self.centerTodayJsonModel.stories.count; i++) {
-//                    ZPFCenterTodayStoriesJSONModel *storiesJsonModel = [[ZPFCenterTodayStoriesJSONModel alloc] initWithDictionary:dic[@"stories"][i] error:nil];
-//
-//                    [self.textViewMutableArray addObject:storiesJsonModel.title];
-//
-//                    //数组转为字符串
-//                    NSString *string1 = [storiesJsonModel.images componentsJoinedByString:@","];
-//                    NSURL *url1 = [NSURL URLWithString:string1];
-//
-//                    NSData *data = [NSData dataWithContentsOfURL:url1];
-//
-//                    UIImage *image = [UIImage imageWithData:data];
-//
-//
-//                    [self.pictureImageViewMutableArray addObject:image];
-//
-//
-//                }
-//                for (int i = 0; i < self.centerTodayJsonModel.top_stories.count; i++){
-//                    ZPFCenterTodayTop_storiesJSONModel *topStoriesModel = [[ZPFCenterTodayTop_storiesJSONModel alloc] initWithDictionary:dic[@"top_stories"][i] error:nil];
-//                    //                                        NSLog(@"-====%@", topStoriesModel.image);
-//
-//                    NSURL *url2 = [NSURL URLWithString:topStoriesModel.image];
-//
-//                    NSData *data1 = [NSData dataWithContentsOfURL:url2];
-//
-//                    UIImage *image1 = [UIImage imageWithData:data1];
-//                    [self.scrollerViewMutableArray addObject:image1];
-//
-//                    //                    NSLog(@"&&&&&&%ld", self.scrollerViewMutableArray.count);
-//                    //                    NSLog(@"%@", self.scrollerViewMutableArray);
-//
-//                }
-//
-//                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                    [self.tableView reloadData];
-//                }];
-//
-//            } else {
-//                NSLog(@"%@", error);
-//            }
-//        }];
-//        [dataTask resume];
-//    });
-//}
+- (void)creatWeb {
+    dispatch_queue_t queue = dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        NSString *string = @"https://news-at.zhihu.com/api/4/news/latest";
+        NSString *urlString = [[NSString alloc] init];
+        urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLSession *session = [NSURLSession sharedSession];
+        
+        NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (data && error ==  nil) {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                self.centerTodayJsonModel = [[ZPFCenterTodayJSONModel alloc] initWithDictionary:dic error:nil];
+                //                NSLog(@"%@", self.centerTodayJsonModel.date);
+
+
+
+
+                for (int i = 0; i < self.centerTodayJsonModel.stories.count; i++) {
+                    ZPFCenterTodayStoriesJSONModel *storiesJsonModel = [[ZPFCenterTodayStoriesJSONModel alloc] initWithDictionary:dic[@"stories"][i] error:nil];
+
+                    [self.textViewMutableArray addObject:storiesJsonModel.title];
+
+                    //数组转为字符串
+                    NSString *string1 = [storiesJsonModel.images componentsJoinedByString:@","];
+                    NSURL *url1 = [NSURL URLWithString:string1];
+
+                    NSData *data = [NSData dataWithContentsOfURL:url1];
+
+                    UIImage *image = [UIImage imageWithData:data];
+
+
+                    [self.pictureImageViewMutableArray addObject:image];
+
+
+                }
+                for (int i = 0; i < self.centerTodayJsonModel.top_stories.count; i++){
+                    ZPFCenterTodayTop_storiesJSONModel *topStoriesModel = [[ZPFCenterTodayTop_storiesJSONModel alloc] initWithDictionary:dic[@"top_stories"][i] error:nil];
+                    //                                        NSLog(@"-====%@", topStoriesModel.image);
+
+                    NSURL *url2 = [NSURL URLWithString:topStoriesModel.image];
+
+                    NSData *data1 = [NSData dataWithContentsOfURL:url2];
+
+                    UIImage *image1 = [UIImage imageWithData:data1];
+                    [self.scrollerViewMutableArray addObject:image1];
+
+                    //                    NSLog(@"&&&&&&%ld", self.scrollerViewMutableArray.count);
+                    //                    NSLog(@"%@", self.scrollerViewMutableArray);
+
+                }
+
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.tableView reloadData];
+                }];
+
+            } else {
+                NSLog(@"%@", error);
+            }
+        }];
+        [dataTask resume];
+    });
+}
 
 - (void)creatInternet:(NSString *)dateString {
     self.headViewDateString = [[NSString alloc] init];
@@ -162,7 +165,7 @@
                     UIImage *image = [UIImage imageWithData:data];
                     
                     [self.nextPictureImageViewMutableArray addObject:image];
-                    //[self.pictureImageViewMutableArray addObject:image];
+    
                     
                     
                 }
@@ -196,36 +199,15 @@
         return self.nextTextViewMutableArray.count;
     }
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 0) {
-//        //        220-64
-//        return 156;
-//    } else {
-//        return 90;
-//    }
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    if(section == 0 || section == 1) {
-//        return 0.00;
-//    } else {
-//        return 50;
-//    }
-//}
+
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     //    return @"星期六";
     return self.headViewDateString;
 }
 
-//- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-//    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-//    header.contentView.backgroundColor= [UIColor colorWithRed:0.22f green:0.52f blue:0.81f alpha:1.00f];
-//    [header.textLabel setTextColor:[UIColor whiteColor]];
-//    [header.textLabel setTextAlignment:NSTextAlignmentCenter];
-//    [header.textLabel setFont:[UIFont systemFontOfSize:14]];
-//    //    view.tintColor = [UIColor colorWithRed:0.22f green:0.52f blue:0.81f alpha:1.00f ];
-//}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -250,7 +232,7 @@
         ZPFScrollerTableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         
         //        self.scrollerView = [[ScrollerView alloc] initWithFrame:cell1.frame];
-        self.scrollerView = [[ZPFScrollerView alloc] initWithFrame:CGRectMake(0, 0, 375, 220)];
+        self.scrollerView = [[ZPFScrollerView alloc] initWithFrame:CGRectMake(0, 0, ZPFWidth, 220)];
         self.scrollerView.delegate = self;
         //        NSLog(@"shuiwhudhwio");
         self.scrollerView.images = @[[UIImage imageNamed:@"0的副本.jpg"],
@@ -267,24 +249,39 @@
         self.scrollerView.currentPageColor = [UIColor orangeColor];
         self.scrollerView.pageColor = [UIColor grayColor];
         cell1.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        
+        
         [cell1 addSubview:self.scrollerView];
         
         return cell1;
     } else if (indexPath.section == 1) {
         ZPFNewsTableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
         //        cell2.textView.text = @"123";
-        cell2.textView.text = self.textViewMutableArray[indexPath.row];
+//        cell2.textView.text = self.textViewMutableArray[indexPath.row];
+        
+        cell2.label.text = [self.centerTodayJsonModel.stories[indexPath.row] title];
+        
+//        cell2.label.text = self.textViewMutableArray[indexPath.row];
         cell2.pictureImageView.image = self.pictureImageViewMutableArray[indexPath.row];
-        //        cell2.pictureImageView.image = [UIImage imageNamed: self.pictureImageViewMutableArray[indexPath.row]];
+//                cell2.pictureImageView.image = [UIImage imageNamed: self.pictureImageViewMutableArray[indexPath.row]];
         //        cell2.backgroundColor = [UIColor greenColor];
         cell2.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        
         return cell2;
     } else {
         ZPFNewsTableViewCell *cell3 = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
         //        cell3.textView.text = @"123";
-        cell3.textView.text = self.nextTextViewMutableArray[indexPath.row];
+//        cell3.textView.text = self.nextTextViewMutableArray[indexPath.row];
+        cell3.label.text = self.nextTextViewMutableArray[indexPath.row];
         cell3.pictureImageView.image = self.nextPictureImageViewMutableArray[indexPath.row];
         cell3.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        
         return cell3;
     }
 }

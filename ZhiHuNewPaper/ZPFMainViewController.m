@@ -98,7 +98,7 @@
     [UIView animateWithDuration:0.1 animations:^{
         _isAnimating = YES;
         if(!_isMenuOpen){
-            self.contentController.view.transform = CGAffineTransformMakeTranslation(180, 0);
+            self.contentController.view.transform = CGAffineTransformMakeTranslation(220, 0);
         }
         else {
             //           self.contentController.view.transform = CGAffineTransformMakeTranslation(CGRectGetMaxX(self.view.bounds), 0);

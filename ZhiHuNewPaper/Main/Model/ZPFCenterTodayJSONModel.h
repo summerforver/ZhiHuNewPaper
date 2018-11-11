@@ -8,6 +8,15 @@
 
 #import "JSONModel.h"
 
+@protocol ZPFCenterTodayStoriesJSONModel
+
+@end
+
+@protocol ZPFCenterTodayTop_storiesJSONModel
+
+@end
+
+
 @interface ZPFCenterTodayStoriesJSONModel : JSONModel
 @property (nonatomic, copy) NSArray *images;
 @property (nonatomic, copy) NSString *title;
@@ -21,6 +30,6 @@
 
 @interface ZPFCenterTodayJSONModel : JSONModel
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, copy) NSArray<ZPFCenterTodayStoriesJSONModel *> *stories;
-@property (nonatomic, copy) NSArray<ZPFCenterTodayTop_storiesJSONModel *> *top_stories;
+@property (nonatomic, copy) NSArray<ZPFCenterTodayStoriesJSONModel> *stories;
+@property (nonatomic, copy) NSArray<ZPFCenterTodayTop_storiesJSONModel> *top_stories;
 @end

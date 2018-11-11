@@ -16,7 +16,7 @@
         self.textViewMutableArray = [[NSMutableArray alloc] init];
         self.pictureImageViewMutableArray = [[NSMutableArray alloc] init];
         self.scrollerViewMutableArray = [[NSMutableArray alloc] init];
-        [self creatWeb];
+//        [self creatWeb];
     }
     return self;
 }
@@ -34,39 +34,49 @@
             if (data && error ==  nil) {
                 NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
                 self.centerTodayJsonModel = [[ZPFCenterTodayJSONModel alloc] initWithDictionary:dic error:nil];
-                //                NSLog(@"%@", self.centerTodayJsonModel.date);
-                
-                
-                
+               
                 
                 for (int i = 0; i < self.centerTodayJsonModel.stories.count; i++) {
-                    ZPFCenterTodayStoriesJSONModel *storiesJsonModel = [[ZPFCenterTodayStoriesJSONModel alloc] initWithDictionary:dic[@"stories"][i] error:nil];
+//                    ZPFCenterTodayStoriesJSONModel *storiesJsonModel = [[ZPFCenterTodayStoriesJSONModel alloc] initWithDictionary:dic[@"stories"][i] error:nil];
                     
-                    [self.textViewMutableArray addObject:storiesJsonModel.title];
+                     ZPFCenterTodayStoriesJSONModel *storiesJsonModel = [[ZPFCenterTodayStoriesJSONModel alloc] initWithDictionary:dic[@"stories"][i] error:nil];
+                    
+//                    [self.textViewMutableArray addObject:storiesJsonModel.title];
+                    
+                    [self.textViewMutableArray addObject:storiesJsonModel];
+                    
+//                                     NSLog(@"%@", self.textViewMutableArray);
+                    
+//                    NSLog(@"====%@", self.pictureImageViewMutableArray);
                     
                     //数组转为字符串
-                    NSString *string1 = [storiesJsonModel.images componentsJoinedByString:@","];
-                    NSURL *url1 = [NSURL URLWithString:string1];
-                    
-                    NSData *data = [NSData dataWithContentsOfURL:url1];
-                    
-                    UIImage *image = [UIImage imageWithData:data];
-                    
-                    
-                    [self.pictureImageViewMutableArray addObject:image];
-                    
+//                    NSString *string1 = [storiesJsonModel.images componentsJoinedByString:@","];
+//
+//                    NSURL *url1 = [NSURL URLWithString:string1];
+//
+//                    NSData *data = [NSData dataWithContentsOfURL:url1];
+//
+//                    [self.pictureImageViewMutableArray addObject:data];
+
+                    //UIImage *image = [UIImage imageWithData:data];
+
+                    //[self.pictureImageViewMutableArray addObject:image];
+//
                     
                 }
                 for (int i = 0; i < self.centerTodayJsonModel.top_stories.count; i++){
                     ZPFCenterTodayTop_storiesJSONModel *topStoriesModel = [[ZPFCenterTodayTop_storiesJSONModel alloc] initWithDictionary:dic[@"top_stories"][i] error:nil];
                     //                                        NSLog(@"-====%@", topStoriesModel.image);
                     
-                    NSURL *url2 = [NSURL URLWithString:topStoriesModel.image];
+                   
+                   // [self.scrollerViewMutableArray addObject:topStoriesModel.image];
                     
-                    NSData *data1 = [NSData dataWithContentsOfURL:url2];
-                    
-                    UIImage *image1 = [UIImage imageWithData:data1];
-                    [self.scrollerViewMutableArray addObject:image1];
+//                    NSURL *url2 = [NSURL URLWithString:topStoriesModel.image];
+//
+//                    NSData *data1 = [NSData dataWithContentsOfURL:url2];
+//
+//                    UIImage *image1 = [UIImage imageWithData:data1];
+//                    [self.scrollerViewMutableArray addObject:image1];
                     
                     //                    NSLog(@"&&&&&&%ld", self.scrollerViewMutableArray.count);
                     //                    NSLog(@"%@", self.scrollerViewMutableArray);

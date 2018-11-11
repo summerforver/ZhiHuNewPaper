@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZPFNewsTableViewCell : UITableViewCell
-@property (nonatomic, strong) UITextView *textView;
+//@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIImageView *pictureImageView;
 @end

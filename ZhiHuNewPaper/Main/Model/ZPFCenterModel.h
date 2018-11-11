@@ -15,4 +15,5 @@
 @property (nonatomic, strong) NSMutableArray *pictureImageViewMutableArray;
 
 @property (nonatomic, strong) NSMutableArray *scrollerViewMutableArray;
+@property (nonatomic, copy) NSString *headViewDateString;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZPFLeftView.h"
 @class ZPFLeftViewController;
 
 @protocol LeftControllerDelegate<NSObject>
@@ -16,5 +17,6 @@
 
 @interface ZPFLeftViewController : UIViewController
 @property (nonatomic, weak) id <LeftControllerDelegate> delegate;
+@property (nonatomic, strong) ZPFLeftView *leftView;
 
 @end

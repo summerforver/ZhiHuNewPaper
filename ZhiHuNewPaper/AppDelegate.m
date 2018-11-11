@@ -19,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //375 * 667
+    //414 * 736
+    
     /**窗口的设置*/
     [self setWindow:[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds]];
     /**根视图控制器*/

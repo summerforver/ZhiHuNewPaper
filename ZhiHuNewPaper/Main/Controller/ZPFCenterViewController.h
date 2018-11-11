@@ -22,4 +22,10 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *image1;
 @property (nonatomic, weak) id <CenterControllerDelegate> delegate;
+
+
+@property (nonatomic, strong) NSMutableArray *textViewArray;
+@property (nonatomic, strong) NSMutableArray *pictureArray;
+
+
 @end

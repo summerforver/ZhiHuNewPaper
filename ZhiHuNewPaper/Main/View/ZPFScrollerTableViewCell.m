@@ -8,13 +8,17 @@
 
 #import "ZPFScrollerTableViewCell.h"
 #import <Masonry.h>
+
+#define ZPFWidth [UIScreen mainScreen].bounds.size.width
+#define ZPFHeight [UIScreen mainScreen].bounds.size.height
+
 static const int imageBtnCount = 3;
 @implementation ZPFScrollerTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 375, 220)];
+        self.scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ZPFWidth, 220)];
         [self addSubview:self.scrollerView];
         //        [self.scrollerView mas_makeConstraints:^(MASConstraintMaker *make) {
         //            make.size.mas_equalTo(self.contentView);
