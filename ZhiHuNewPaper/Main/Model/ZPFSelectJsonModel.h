@@ -8,12 +8,17 @@
 
 #import "JSONModel.h"
 
+@protocol ZPFSelectStoriesJsonModel
+
+@end
+
 @interface ZPFSelectStoriesJsonModel : JSONModel
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSArray *images;
+@property (nonatomic, copy) NSString *id;
 @end
 
 @interface ZPFSelectJsonModel : JSONModel
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, copy) NSArray<ZPFSelectStoriesJsonModel *> *stories;
+@property (nonatomic, copy) NSArray<ZPFSelectStoriesJsonModel> *stories;
 @end

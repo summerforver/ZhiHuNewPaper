@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "ZPFCenterTodayJSONModel.h"
+#import "ZPFSelectJsonModel.h"
+#import "ZPFCommentJSONModel.h"
 
 // 定位请求返回数据的block
 typedef void(^ZPFCenterTodayHandle)(ZPFCenterTodayJSONModel *resultModel);
+typedef void(^ZPFSelectTodayHandle)(ZPFSelectJsonModel *selectModel);
+typedef void(^ZPFCommentHandle)(ZPFCommentJSONModel *commentModel);
 
 // 获取周边point的回调block
 //typedef void(^MAPGetPointHandle)(ZPFCenterTodayJSONModel *pointModel);
@@ -24,9 +28,10 @@ typedef void(^ErrorHandle)(NSError *error);
 + (instancetype)sharedManager;
 
 // 获取坐标点的信息方法
-- (void)fetchCoordinateDataWithPointID:(int)id succeed:(ZPFCenterTodayHandle)succeedBlock error:(ErrorHandle)errorBlock;
+- (void)fetchCoordinateDataWithsucceed:(ZPFCenterTodayHandle)succeedBlock error:(ErrorHandle)errorBlock;
 
-// 获取周围坐标的方法
-//- (void)fetchPointWithLongitude:(double)longitude Latitude:(double)latitude Range:(int)range succeed:(MAPGetPointHandle)succeedBlock error:(ErrorHandle)errorBlock;
+- (void)fetchCoordinateDataWithPointTime:(NSString *)date succeed:(ZPFSelectTodayHandle)selectSucceedBlock error:(ErrorHandle)errorBlock;
+
+- (void)fetchLongComment:(NSString *)idString succeed:(ZPFCommentHandle)commentSucceedBlock error:(ErrorHandle)errorBlock;
 
 @end

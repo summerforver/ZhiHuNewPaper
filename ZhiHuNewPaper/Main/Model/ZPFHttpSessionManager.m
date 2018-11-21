@@ -8,6 +8,8 @@
 
 #import "ZPFHttpSessionManager.h"
 #import "ZPFCenterTodayJSONModel.h"
+#import "ZPFSelectJsonModel.h"
+#import "ZPFCommentJSONModel.h"
 
 
 @implementation ZPFHttpSessionManager
@@ -22,7 +24,7 @@ static ZPFHttpSessionManager *manager = nil;
     return manager;
 }
 
-- (void)fetchCoordinateDataWithPointID:(int)id succeed:(ZPFCenterTodayHandle)succeedBlock error:(ErrorHandle)errorBlock {
+- (void)fetchCoordinateDataWithsucceed:(ZPFCenterTodayHandle)succeedBlock error:(ErrorHandle)errorBlock {
         NSString *string = @"https://news-at.zhihu.com/api/4/news/latest";
         NSString *urlString = [[NSString alloc] init];
         urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -30,8 +32,6 @@ static ZPFHttpSessionManager *manager = nil;
         NSURLSession *session = [NSURLSession sharedSession];
         
         NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            
-
             if (data && error ==  nil) {
                 NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
                 ZPFCenterTodayJSONModel *model = [[ZPFCenterTodayJSONModel alloc] initWithDictionary:dic error:&error];
@@ -46,8 +46,47 @@ static ZPFHttpSessionManager *manager = nil;
         [dataTask resume];
 }
 
+- (void)fetchCoordinateDataWithPointTime:(NSString *)date succeed:(ZPFSelectTodayHandle)selectSucceedBlock error:(ErrorHandle)errorBlock {
+        NSString *string = [NSString stringWithFormat:@"https://news-at.zhihu.com/api/4/news/before/%@", date];
+        NSString *urlString = [[NSString alloc] init];
+        urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (data && error ==  nil) {
+                NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                ZPFSelectJsonModel *selectModel = [[ZPFSelectJsonModel alloc] initWithDictionary:dic1 error:&error];
+                
+                selectSucceedBlock(selectModel);
+                
+                    
+            } else {
+                errorBlock(error);
+            }
+        }];
+            
+        [dataTask resume];
+}
 
-
-
-
+- (void)fetchLongComment:(NSString *)idString succeed:(ZPFCommentHandle)commentSucceedBlock error:(ErrorHandle)errorBlock {
+    NSString *string = [NSString stringWithFormat:@"https://news-at.zhihu.com/api/4/story/%@/long-comments", idString];
+    NSString *urlString = [[NSString alloc] init];
+    urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data && error ==  nil) {
+            NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            
+            ZPFCommentJSONModel *commentModel = [[ZPFCommentJSONModel alloc] initWithDictionary:dic1 error:&error];
+            
+            commentSucceedBlock(commentModel);
+        
+        } else {
+            errorBlock(error);
+        }
+    }];
+    
+    [dataTask resume];
+}
 @end

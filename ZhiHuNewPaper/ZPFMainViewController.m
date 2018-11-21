@@ -10,6 +10,8 @@
 #import "ZPFLeftViewController.h"
 #import "ZPFCenterViewController.h"
 #import "ZPFOtherViewController.h"
+#define ZPFWidth [UIScreen mainScreen].bounds.size.width
+#define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
 
 @interface ZPFMainViewController () <LeftControllerDelegate>
@@ -98,7 +100,7 @@
     [UIView animateWithDuration:0.1 animations:^{
         _isAnimating = YES;
         if(!_isMenuOpen){
-            self.contentController.view.transform = CGAffineTransformMakeTranslation(220, 0);
+            self.contentController.view.transform = CGAffineTransformMakeTranslation(220.0/375.0 * ZPFWidth, 0);
         }
         else {
             //           self.contentController.view.transform = CGAffineTransformMakeTranslation(CGRectGetMaxX(self.view.bounds), 0);

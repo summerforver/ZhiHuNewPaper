@@ -8,6 +8,7 @@
 
 #import "ZPFLeftView.h"
 #import <Masonry.h>
+#import "ZPFFooterView.h"
 #define ZPFWidth [UIScreen mainScreen].bounds.size.width
 #define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
@@ -24,9 +25,9 @@
     return self;
 }
 - (void)addView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, (220.0/375.0) * ZPFWidth, ZPFHeight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 220.0 / 375.0 * ZPFWidth, ZPFHeight) style:UITableViewStylePlain];
     
-    self.tableView.delegate = self;
+//    self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.14f green:0.16f blue:0.19f alpha:1.00f];
     self.tableView.scrollEnabled = NO;
@@ -35,7 +36,14 @@
 //    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:CGRectZero]];
 //    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
+    ZPFFooterView *footView = [[ZPFFooterView alloc] init];
+    [self.tableView setTableFooterView:footView];
+    
+    
+    
     [self addSubview:self.tableView];
+    
+    
     
    
     
@@ -43,26 +51,13 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 12;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 70.0/667 * ZPFHeight;
-    } else if (indexPath.section == 1) {
-        return 50.0/667 * ZPFHeight;
-    } else {
-        return 50.0/667 * ZPFHeight;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.00001;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -107,9 +102,6 @@
             [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(40.0/375.0 * ZPFWidth);
                 make.height.mas_equalTo(40.0/667.0 * ZPFHeight);
-                
-                
-                
                 make.left.mas_equalTo(15.0/375.0 * ZPFWidth);
                 make.top.mas_equalTo(30.0/667.0 * ZPFHeight);
             }];
@@ -133,7 +125,7 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         return cell;
-    } else {
+    } else if (indexPath.section == 1){
         if (cell1 == nil) {
             cell1 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell1"];
             
@@ -168,6 +160,14 @@
         }
         return cell1;
         
+    } else {
+        UITableViewCell *cell4 = [tableView dequeueReusableCellWithIdentifier:@"cell4"];
+        if (cell4 == nil) {
+            cell4 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell4"];
+            cell4.backgroundColor = [UIColor colorWithRed:0.14f green:0.16f blue:0.19f alpha:1.00f];
+            cell4.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        return cell4;
     }
     
 }

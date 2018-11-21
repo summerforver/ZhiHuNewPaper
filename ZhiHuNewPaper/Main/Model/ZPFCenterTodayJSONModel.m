@@ -20,10 +20,14 @@
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
     return YES;
 }
++(JSONKeyMapper *)keyMapper {
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"zpfImage":@"image", @"zpfTitle":@"title", @"zpfType":@"type", @"zpfId":@"id", @"zpfGaprefix":@"ga_prefix"}];
+}
 @end
 
 @implementation ZPFCenterTodayJSONModel
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
     return YES;
 }
+
 @end

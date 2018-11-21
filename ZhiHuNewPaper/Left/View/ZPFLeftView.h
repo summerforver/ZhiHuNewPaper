@@ -10,10 +10,6 @@
 
 @interface ZPFLeftView : UIView <UITableViewDelegate, UITableViewDataSource>
 
-//@property (nonatomic, strong) UIButton *item1;
-//@property (nonatomic, strong) UIButton *item2;
-//@property (nonatomic, strong) UIImageView *pictureImageView;
-
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIButton *button;

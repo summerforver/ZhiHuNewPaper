@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0BAEBB2198643800FF50FD /* ZPFFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBA2198643800FF50FD /* ZPFFooterView.m */; };
+		1B0BAEBD21986A2000FF50FD /* yejianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBC21986A1F00FF50FD /* yejianmoshi.png */; };
+		1B0BAEBF21986A2500FF50FD /* lixian.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBE21986A2500FF50FD /* lixian.png */; };
 		1B1C11D5219054F400AFB098 /* ZPFLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C11D4219054F400AFB098 /* ZPFLeftView.m */; };
 		1B1C11D921905C3C00AFB098 /* shouye.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11D821905C3C00AFB098 /* shouye.png */; };
 		1B1C11DC2190678900AFB098 /* s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11DB2190678900AFB098 /* s.jpg */; };
@@ -38,11 +41,30 @@
 		1BD07915218B27B6003C6228 /* 4的副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BD07910218B27B5003C6228 /* 4的副本.jpg */; };
 		1BD07917218B2BEA003C6228 /* 首页三条线1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD07916218B2BE9003C6228 /* 首页三条线1.png */; };
 		1BD0791A218B2DD1003C6228 /* ZPFSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */; };
-		1BD0791D218B32E2003C6228 /* ZPFCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */; };
+		1BD90D7C21A270EF00682BCE /* ZPFDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90D7B21A270EF00682BCE /* ZPFDataUtils.m */; };
+		1BEB8BFF21A423F10037947C /* dianzan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8BFA21A423EF0037947C /* dianzan.png */; };
+		1BEB8C0021A423F10037947C /* pinglun.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8BFB21A423F00037947C /* pinglun.png */; };
+		1BEB8C0121A423F10037947C /* xia.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8BFC21A423F00037947C /* xia.png */; };
+		1BEB8C0321A423F10037947C /* zuo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8BFE21A423F00037947C /* zuo.png */; };
+		1BEB8C0521A429120037947C /* zhuanfa.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8C0421A429120037947C /* zhuanfa.png */; };
+		1BEB8C0821A42A1E0037947C /* ZPFCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB8C0721A42A1E0037947C /* ZPFCommentViewController.m */; };
+		1BEB8C0E21A4403D0037947C /* xiedianping.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8C0D21A4403D0037947C /* xiedianping.png */; };
+		1BEB8C1021A441620037947C /* zuobian.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8C0F21A441620037947C /* zuobian.png */; };
+		1BEB8C1421A448060037947C /* shuangjiantouxia.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEB8C1321A448060037947C /* shuangjiantouxia.png */; };
+		1BEB8C1A21A449860037947C /* ZPFCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB8C1921A449860037947C /* ZPFCommentTableViewCell.m */; };
+		1BF1BDB521A57829003D1EAC /* zan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF1BDB421A57828003D1EAC /* zan.png */; };
+		1BF1BDB821A578D3003D1EAC /* ZPFCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDB721A578D3003D1EAC /* ZPFCommentView.m */; };
+		1BF1BDBB21A57CA5003D1EAC /* ZPFWriteCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */; };
+		1BF1BDBE21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */; };
+		1BF1BDC121A58526003D1EAC /* ZPFCommentJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */; };
 		20991D8B6765C01A7D5B4F00 /* libPods-ZhiHuNewPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0BAEB92198643800FF50FD /* ZPFFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFFooterView.h; sourceTree = "<group>"; };
+		1B0BAEBA2198643800FF50FD /* ZPFFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFFooterView.m; sourceTree = "<group>"; };
+		1B0BAEBC21986A1F00FF50FD /* yejianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejianmoshi.png; sourceTree = "<group>"; };
+		1B0BAEBE21986A2500FF50FD /* lixian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lixian.png; sourceTree = "<group>"; };
 		1B1C11D3219054F400AFB098 /* ZPFLeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFLeftView.h; sourceTree = "<group>"; };
 		1B1C11D4219054F400AFB098 /* ZPFLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFLeftView.m; sourceTree = "<group>"; };
 		1B1C11D821905C3C00AFB098 /* shouye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shouye.png; path = "../../ZhiHuDayPaper图片/shouye.png"; sourceTree = "<group>"; };
@@ -91,8 +113,29 @@
 		1BD07916218B2BE9003C6228 /* 首页三条线1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页三条线1.png"; sourceTree = "<group>"; };
 		1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFSelectViewController.h; sourceTree = "<group>"; };
 		1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFSelectViewController.m; sourceTree = "<group>"; };
-		1BD0791B218B32E2003C6228 /* ZPFCenterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCenterModel.h; sourceTree = "<group>"; };
-		1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCenterModel.m; sourceTree = "<group>"; };
+		1BD90D7A21A270EF00682BCE /* ZPFDataUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFDataUtils.h; sourceTree = "<group>"; };
+		1BD90D7B21A270EF00682BCE /* ZPFDataUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFDataUtils.m; sourceTree = "<group>"; };
+		1BEB8BFA21A423EF0037947C /* dianzan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianzan.png; sourceTree = "<group>"; };
+		1BEB8BFB21A423F00037947C /* pinglun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinglun.png; sourceTree = "<group>"; };
+		1BEB8BFC21A423F00037947C /* xia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xia.png; sourceTree = "<group>"; };
+		1BEB8BFE21A423F00037947C /* zuo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zuo.png; sourceTree = "<group>"; };
+		1BEB8C0421A429120037947C /* zhuanfa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zhuanfa.png; path = "../../ZhiHuDayPaper图片/zhuanfa.png"; sourceTree = "<group>"; };
+		1BEB8C0621A42A1E0037947C /* ZPFCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCommentViewController.h; sourceTree = "<group>"; };
+		1BEB8C0721A42A1E0037947C /* ZPFCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCommentViewController.m; sourceTree = "<group>"; };
+		1BEB8C0D21A4403D0037947C /* xiedianping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xiedianping.png; path = "../../ZhiHuDayPaper图片/xiedianping.png"; sourceTree = "<group>"; };
+		1BEB8C0F21A441620037947C /* zuobian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zuobian.png; sourceTree = "<group>"; };
+		1BEB8C1321A448060037947C /* shuangjiantouxia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuangjiantouxia.png; path = "../../ZhiHuDayPaper图片/shuangjiantouxia.png"; sourceTree = "<group>"; };
+		1BEB8C1821A449860037947C /* ZPFCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCommentTableViewCell.h; sourceTree = "<group>"; };
+		1BEB8C1921A449860037947C /* ZPFCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCommentTableViewCell.m; sourceTree = "<group>"; };
+		1BF1BDB421A57828003D1EAC /* zan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zan.png; sourceTree = "<group>"; };
+		1BF1BDB621A578D3003D1EAC /* ZPFCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCommentView.h; sourceTree = "<group>"; };
+		1BF1BDB721A578D3003D1EAC /* ZPFCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCommentView.m; sourceTree = "<group>"; };
+		1BF1BDB921A57CA5003D1EAC /* ZPFWriteCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFWriteCommentViewController.h; sourceTree = "<group>"; };
+		1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFWriteCommentViewController.m; sourceTree = "<group>"; };
+		1BF1BDBC21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFMyActivityIndicatorView.h; sourceTree = "<group>"; };
+		1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFMyActivityIndicatorView.m; sourceTree = "<group>"; };
+		1BF1BDBF21A58526003D1EAC /* ZPFCommentJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCommentJSONModel.h; sourceTree = "<group>"; };
+		1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCommentJSONModel.m; sourceTree = "<group>"; };
 		A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHuNewPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A0DA8FF5BC7637B444FEA9 /* Pods-ZhiHuNewPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.debug.xcconfig"; sourceTree = "<group>"; };
 		FDA26D57BFBA193D98052514 /* Pods-ZhiHuNewPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +220,16 @@
 				1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */,
 				1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */,
 				1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */,
+				1BD90D7A21A270EF00682BCE /* ZPFDataUtils.h */,
+				1BD90D7B21A270EF00682BCE /* ZPFDataUtils.m */,
+				1BEB8C0621A42A1E0037947C /* ZPFCommentViewController.h */,
+				1BEB8C0721A42A1E0037947C /* ZPFCommentViewController.m */,
+				1BF1BDB921A57CA5003D1EAC /* ZPFWriteCommentViewController.h */,
+				1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */,
+				1BEB8C1821A449860037947C /* ZPFCommentTableViewCell.h */,
+				1BEB8C1921A449860037947C /* ZPFCommentTableViewCell.m */,
+				1BF1BDBC21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.h */,
+				1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +245,17 @@
 				1B1C11DD21906FB000AFB098 /* shoucang.png */,
 				1B1C11DF219072CB00AFB098 /* xiaoxi.png */,
 				1B1C11E1219072CF00AFB098 /* shezhi.png */,
+				1B0BAEBC21986A1F00FF50FD /* yejianmoshi.png */,
+				1B0BAEBE21986A2500FF50FD /* lixian.png */,
+				1BEB8BFA21A423EF0037947C /* dianzan.png */,
+				1BEB8BFB21A423F00037947C /* pinglun.png */,
+				1BEB8BFC21A423F00037947C /* xia.png */,
+				1BEB8C0421A429120037947C /* zhuanfa.png */,
+				1BEB8BFE21A423F00037947C /* zuo.png */,
+				1BEB8C0D21A4403D0037947C /* xiedianping.png */,
+				1BEB8C0F21A441620037947C /* zuobian.png */,
+				1BEB8C1321A448060037947C /* shuangjiantouxia.png */,
+				1BF1BDB421A57828003D1EAC /* zan.png */,
 			);
 			path = "ZhiHuDayPaper图片";
 			sourceTree = "<group>";
@@ -201,6 +265,8 @@
 			children = (
 				1BD078F3218B20B7003C6228 /* ZPFCenterView.h */,
 				1BD078F4218B20B7003C6228 /* ZPFCenterView.m */,
+				1BF1BDB621A578D3003D1EAC /* ZPFCommentView.h */,
+				1BF1BDB721A578D3003D1EAC /* ZPFCommentView.m */,
 				1BD078F7218B210B003C6228 /* ZPFScrollerView.h */,
 				1BD078F8218B210B003C6228 /* ZPFScrollerView.m */,
 				1BD078FA218B212A003C6228 /* ZPFNewsTableViewCell.h */,
@@ -218,8 +284,8 @@
 				1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */,
 				1BD07908218B2494003C6228 /* ZPFSelectJsonModel.h */,
 				1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */,
-				1BD0791B218B32E2003C6228 /* ZPFCenterModel.h */,
-				1BD0791C218B32E2003C6228 /* ZPFCenterModel.m */,
+				1BF1BDBF21A58526003D1EAC /* ZPFCommentJSONModel.h */,
+				1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */,
 				1B1F083921952A5F0077C4CC /* ZPFHttpSessionManager.h */,
 				1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */,
 			);
@@ -252,6 +318,8 @@
 			children = (
 				1B1C11D3219054F400AFB098 /* ZPFLeftView.h */,
 				1B1C11D4219054F400AFB098 /* ZPFLeftView.m */,
+				1B0BAEB92198643800FF50FD /* ZPFFooterView.h */,
+				1B0BAEBA2198643800FF50FD /* ZPFFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,20 +400,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1C11E2219072CF00AFB098 /* shezhi.png in Resources */,
+				1BEB8C1421A448060037947C /* shuangjiantouxia.png in Resources */,
 				1B1C11D921905C3C00AFB098 /* shouye.png in Resources */,
+				1BEB8C0021A423F10037947C /* pinglun.png in Resources */,
+				1B0BAEBD21986A2000FF50FD /* yejianmoshi.png in Resources */,
+				1BEB8C0121A423F10037947C /* xia.png in Resources */,
 				1BD07911218B27B6003C6228 /* 0的副本.jpg in Resources */,
 				1BD07914218B27B6003C6228 /* 3的副本.jpg in Resources */,
+				1BEB8C0521A429120037947C /* zhuanfa.png in Resources */,
+				1B0BAEBF21986A2500FF50FD /* lixian.png in Resources */,
 				1B1C11DC2190678900AFB098 /* s.jpg in Resources */,
 				1BD078F2218B2046003C6228 /* 首页三条线.png in Resources */,
 				1BD078D6218B1148003C6228 /* LaunchScreen.storyboard in Resources */,
+				1BEB8BFF21A423F10037947C /* dianzan.png in Resources */,
 				1BD07913218B27B6003C6228 /* 2的副本.jpg in Resources */,
+				1BEB8C1021A441620037947C /* zuobian.png in Resources */,
 				1BD07912218B27B6003C6228 /* 1的副本.jpg in Resources */,
 				1BD07915218B27B6003C6228 /* 4的副本.jpg in Resources */,
 				1B1C11DE21906FB000AFB098 /* shoucang.png in Resources */,
 				1BD078D3218B1148003C6228 /* Assets.xcassets in Resources */,
+				1BEB8C0321A423F10037947C /* zuo.png in Resources */,
+				1BF1BDB521A57829003D1EAC /* zan.png in Resources */,
 				1B1C11E0219072CB00AFB098 /* xiaoxi.png in Resources */,
 				1BD07917218B2BEA003C6228 /* 首页三条线1.png in Resources */,
 				1BD078D1218B113C003C6228 /* Main.storyboard in Resources */,
+				1BEB8C0E21A4403D0037947C /* xiedianping.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,18 +459,25 @@
 				1BD078FF218B2144003C6228 /* ZPFScrollerTableViewCell.m in Sources */,
 				1BD078ED218B1B8A003C6228 /* ZPFOtherViewController.m in Sources */,
 				1BD078CE218B113C003C6228 /* ViewController.m in Sources */,
+				1BEB8C0821A42A1E0037947C /* ZPFCommentViewController.m in Sources */,
 				1BD0791A218B2DD1003C6228 /* ZPFSelectViewController.m in Sources */,
 				1BD078D9218B1148003C6228 /* main.m in Sources */,
+				1BEB8C1A21A449860037947C /* ZPFCommentTableViewCell.m in Sources */,
 				1BD078E7218B1846003C6228 /* ZPFCenterViewController.m in Sources */,
-				1BD0791D218B32E2003C6228 /* ZPFCenterModel.m in Sources */,
+				1BD90D7C21A270EF00682BCE /* ZPFDataUtils.m in Sources */,
 				1BD078E4218B130C003C6228 /* ZPFLeftViewController.m in Sources */,
+				1BF1BDBB21A57CA5003D1EAC /* ZPFWriteCommentViewController.m in Sources */,
+				1B0BAEBB2198643800FF50FD /* ZPFFooterView.m in Sources */,
 				1BD078FC218B212A003C6228 /* ZPFNewsTableViewCell.m in Sources */,
 				1BD078E1218B12E6003C6228 /* ZPFMainViewController.m in Sources */,
 				1BD0790A218B2494003C6228 /* ZPFSelectJsonModel.m in Sources */,
 				1B1F083B21952A5F0077C4CC /* ZPFHttpSessionManager.m in Sources */,
 				1BD078F5218B20B7003C6228 /* ZPFCenterView.m in Sources */,
+				1BF1BDBE21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m in Sources */,
 				1BD07907218B21C1003C6228 /* ZPFCenterTodayJSONModel.m in Sources */,
+				1BF1BDC121A58526003D1EAC /* ZPFCommentJSONModel.m in Sources */,
 				1BD078CB218B113C003C6228 /* AppDelegate.m in Sources */,
+				1BF1BDB821A578D3003D1EAC /* ZPFCommentView.m in Sources */,
 				1B1C11D5219054F400AFB098 /* ZPFLeftView.m in Sources */,
 				1BD078F9218B210B003C6228 /* ZPFScrollerView.m in Sources */,
 			);

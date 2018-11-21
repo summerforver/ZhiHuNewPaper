@@ -16,19 +16,6 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 10, 250, 70)];
-//        self.textView = [[UITextView alloc] init];
-//        self.textView.font = [UIFont systemFontOfSize:17.0];
-//        self.textView.scrollEnabled = NO;
-//        
-//        [self addSubview:self.textView];
-//    
-//        [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(250.0/375.0 * ZPFWidth, 70.0/667.0 * ZPFHeight));
-//            make.top.mas_equalTo(10.0/667.0 * ZPFHeight);
-//            make.left.mas_equalTo(15.0/375.0 * ZPFWidth);
-//        }];
-        
         
         self.label = [[UILabel alloc] init];
         self.label.font = [UIFont systemFontOfSize:17.0];
@@ -65,14 +52,6 @@
     }
     return self;
 }
-//- (void)layoutSubviews {
-//    [super layoutSubviews];
-//    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(10);
-//        make.left.mas_equalTo(10);
-//        make.right.mas_equalTo(100);
-//    }];
-//}
 
 
 

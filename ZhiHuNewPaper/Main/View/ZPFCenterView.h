@@ -17,13 +17,12 @@
 @property (nonatomic, strong) ZPFScrollerView *scrollerView;
 @property (nonatomic, strong) ZPFCenterTodayJSONModel *centerTodayJsonModel;
 @property (nonatomic, strong) ZPFSelectJsonModel *selectJsonModel;
-@property (nonatomic, strong) NSMutableArray *textViewMutableArray;
-@property (nonatomic, strong) NSMutableArray *pictureImageViewMutableArray;
 
-@property (nonatomic, strong) NSMutableArray *nextTextViewMutableArray;
-@property (nonatomic, strong) NSMutableArray *nextPictureImageViewMutableArray;
-
-@property (nonatomic, strong) NSMutableArray *scrollerViewMutableArray;
 @property (nonatomic, copy) NSString *headViewDateString;
+@property (nonatomic, strong) NSMutableArray *array;
+@property int intstring;
+@property(nonatomic, assign) NSInteger datas;
+
+- (void)scrollerPictureImage;
 
 @end

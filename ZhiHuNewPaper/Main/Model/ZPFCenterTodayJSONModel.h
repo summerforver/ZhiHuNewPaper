@@ -20,11 +20,15 @@
 @interface ZPFCenterTodayStoriesJSONModel : JSONModel
 @property (nonatomic, copy) NSArray *images;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *id;
 @end
 
 @interface ZPFCenterTodayTop_storiesJSONModel : JSONModel
-@property (nonatomic, copy) NSString *image;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *zpfImage;
+@property (nonatomic, copy) NSString *zpfTitle;
+@property (nonatomic, copy) NSString *zpfType;
+@property (nonatomic, copy) NSString *zpfId;
+@property (nonatomic, copy) NSString *zpfGaprefix;
 @end
 
 

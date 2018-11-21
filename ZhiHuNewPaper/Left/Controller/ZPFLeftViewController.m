@@ -10,6 +10,8 @@
 #import <Masonry.h>
 #import "ZPFLeftView.h"
 #import "ZPFCenterViewController.h"
+#define ZPFWidth [UIScreen mainScreen].bounds.size.width
+#define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
 @interface ZPFLeftViewController () <UITableViewDelegate>
 
@@ -23,9 +25,11 @@
     
 //    self.view.backgroundColor = [UIColor colorWithRed:0.14f green:0.16f blue:0.19f alpha:1.00f];
     
-    self.leftView = [[ZPFLeftView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+//    self.leftView = [[ZPFLeftView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    
+    self.leftView = [[ZPFLeftView alloc] initWithFrame:CGRectMake(0, 0, 220.0 / 375.0 * ZPFWidth, ZPFHeight)];
 
-//    self.leftView.tableView.delegate = self;
+    self.leftView.tableView.delegate = self;
     
     
     
@@ -35,6 +39,22 @@
     [self.view addSubview:self.leftView];
     
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 70.0/667 * ZPFHeight;
+    } else if (indexPath.section == 1) {
+        return 50.0/667 * ZPFHeight;
+    } else {
+        return 50.0/667 * ZPFHeight;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.00001;
+}
+
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    ZPFCenterViewController *viewController = [[ZPFCenterViewController alloc] init];
