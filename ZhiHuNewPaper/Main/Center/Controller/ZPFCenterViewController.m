@@ -58,18 +58,28 @@
     [self.view addSubview:self.centerView];
 //    self.centerModel = [[ZPFCenterModel alloc] init];
 //    为view的tableview注册监听指定key的路径
-//    [self.centerView addObserver:self forKeyPath:@"tableView" options:NSKeyValueObservingOptionNew context:nil];
+    [self.centerView addObserver:self forKeyPath:@"tableView" options:NSKeyValueObservingOptionNew context:nil];
 //    [self.centerModel addObserver:self forKeyPath:@"pictureImageViewMutableArray" options:NSKeyValueObservingOptionNew context:nil];
+    
+   
+    
 
     self.mutableArray = [[NSMutableArray alloc] init];
     self.centerView.array = self.mutableArray;
-//    self.isLoading = NO;
+    
+    self.isLoading = NO;
+    
     self.centerView.intstring = self.intString;
     
     
     self.centerView.datas = self.days;
+    
+    
 }
 
+- (void)refresh:(id)sender{
+    
+}
 
 /**
  视图即将出现
@@ -78,19 +88,32 @@
     [super viewWillAppear:animated];
     [self updateAnnotationArray];
     
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont systemFontOfSize:18]}];
-    
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
-    
-    [self setStatusBarBackgroundColor:[UIColor clearColor]];
-    
+    if (self.centerView.tableView.contentOffset.y < (220 + self.centerView.centerTodayJsonModel.stories.count * 90) ) {
+//        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+
+        [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+
+        [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    } else {
+
+        [self setStatusBarBackgroundColor:[UIColor colorWithRed:0.22f green:0.52f blue:0.81f alpha:1.00f]];
+    }
 }
 
 
 - (void)updateAnnotationArray {
+    
         [[ZPFHttpSessionManager sharedManager] fetchCoordinateDataWithsucceed:^(ZPFCenterTodayJSONModel *resultModel) {
             self.centerView.centerTodayJsonModel = resultModel;
-            [self.mutableArray addObject:resultModel];
+                        [self.mutableArray addObject:resultModel];
+//
+//            NSMutableArray *array = [[NSMutableArray alloc] init];
+//            [array addObject:resultModel];
+//
+//            [self.mutableArray addObjectsFromArray:array];
+//
+//            [self.mutableArray addObject:array];
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.centerView.tableView reloadData];
                 [self.centerView scrollerPictureImage];
@@ -103,9 +126,20 @@
 - (void)updateAnnotationArray1 {
     self.isLoading = YES;
 
-    [[ZPFHttpSessionManager sharedManager] fetchCoordinateDataWithPointTime:[ZPFDataUtils dateStringBeforeDays:self.days] succeed:^(ZPFSelectJsonModel *selectModel) {
+    [[ZPFHttpSessionManager sharedManager] fetchCoordinateDataWithPointTime:[ZPFDataUtils dateStringBeforeDays:self.days + 1] succeed:^(ZPFSelectJsonModel *selectModel) {
         self.centerView.selectJsonModel = selectModel;
+        
+//        NSLog(@"%@", selectModel.date);
+        
         [self.mutableArray addObject:selectModel];
+        
+//
+//        NSMutableArray *array1 = [[NSMutableArray alloc] init];
+//        [array1 addObject:selectModel];
+//
+//
+//        [self.mutableArray addObject:array1];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.centerView.tableView reloadData];
         });
@@ -116,7 +150,7 @@
         self.isLoading = NO;
     }];
 
-
+    
 
 }
 
@@ -171,14 +205,13 @@
 
 //当key路径对应的属性值发生改变时，监听器就会回调自身的监听方法
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"123");
     NSLog(@"===%@", change);
     
 }
 
-
 - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
     [self.centerView removeObserver:self forKeyPath:@"tableView" context:nil];
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -212,6 +245,7 @@
     ZPFSelectViewController *selectViewController = [[ZPFSelectViewController alloc] init];
     if (indexPath.section == 1) {
         ZPFCenterTodayJSONModel *json = [[ZPFCenterTodayJSONModel alloc] init];
+
         json = self.mutableArray[indexPath.section - 1];
         self.IDString = [json.stories[indexPath.row] id];
     } else {
@@ -219,8 +253,22 @@
         json1 = self.mutableArray[indexPath.section - 1];
         self.IDString = [json1.stories[indexPath.row] id];
     }
-
+    
     selectViewController.stringID = self.IDString;
+    selectViewController.section = indexPath.section;
+    selectViewController.row = indexPath.row;
+    
+//    selectViewController.IDStringMutableArray = self.centerView.mutableArray;
+    
+    selectViewController.idStringMutableArray = self.mutableArray;
+    
+    
+    
+//    NSDictionary *dict = @{@"mutableArray": self.mutableArray};
+    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"pass" object:nil userInfo:dict];
+    
+//    NSLog(@"=-=-=-=-=-=-=-=%@", self.centerView.mutableArray);
 
     [self.navigationController pushViewController:selectViewController animated:YES];
     
@@ -254,22 +302,34 @@
     }
     self.navigationController.navigationBar.barStyle = UIBaselineAdjustmentNone;
     
-    [self.view layoutIfNeeded];
+//    [self.view layoutIfNeeded];
    
     CGRect bounds = scrollView.bounds;
     CGSize contentSize = scrollView.contentSize;
     float y = offset.y + bounds.size.height;
     float h = contentSize.height;
-    float reload_distance = -30;
+    float reload_distance = 10;
+    
+//    NSLog(@"---%f", y);
+//    NSLog(@"===%f", h);
+//    NSLog(@"%f", h + reload_distance);
+    
 
     if (y > h + reload_distance ) {
         if (self.isLoading) {
             return;
         } else {
             [self updateAnnotationArray1];
+//            self.days -- ;
+            self.isLoading = YES;
         }
+
+    } else {
+        
     }
     
+//    [self.centerView.tableView reloadData];
+
 }
 
 

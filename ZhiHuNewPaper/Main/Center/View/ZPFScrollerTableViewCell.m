@@ -20,10 +20,7 @@ static const int imageBtnCount = 3;
     if (self) {
         self.scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ZPFWidth, 220)];
         [self addSubview:self.scrollerView];
-        //        [self.scrollerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.size.mas_equalTo(self.contentView);
-        //        }];
-        //
+        
     }
     return self;
 }

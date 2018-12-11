@@ -20,9 +20,13 @@
 
 @property (nonatomic, copy) NSString *headViewDateString;
 @property (nonatomic, strong) NSMutableArray *array;
+
+@property (nonatomic, strong) NSMutableArray *mutableArray;
+
 @property int intstring;
 @property(nonatomic, assign) NSInteger datas;
 
 - (void)scrollerPictureImage;
+//- (void)scrollerPictureTitle;
 
 @end

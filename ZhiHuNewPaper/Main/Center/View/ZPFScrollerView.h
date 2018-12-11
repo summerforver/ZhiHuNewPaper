@@ -25,6 +25,7 @@
 
 //传入图片数组
 @property (nonatomic, copy) NSArray *images;
+@property (nonatomic, copy) NSArray *titleArray;
 //pageControl颜色设置
 @property (nonatomic, strong) UIColor *currentPageColor;
 @property (nonatomic, strong) UIColor *pageColor;

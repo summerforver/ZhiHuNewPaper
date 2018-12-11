@@ -22,37 +22,32 @@
         //label自动换行
         self.label.lineBreakMode = NSLineBreakByWordWrapping;
         self.label.numberOfLines = 0;
-
         [self addSubview:self.label];
         
-        [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(250.0/375.0 * ZPFWidth, 70));
-            make.top.mas_equalTo(10);
-            make.left.mas_equalTo(15.0/375.0 * ZPFWidth);
-        }];
-        
-        
-        
-        
-//        self.pictureImageView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 15, 75, 60)];
         self.pictureImageView = [[UIImageView alloc] init];
         [self addSubview:self.pictureImageView];
         
-                [self.pictureImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//                    make.size.mas_equalTo(CGSizeMake(75.0/375.0 * ZPFWidth, 60.0/667.0 * ZPFHeight));
-                    make.size.mas_equalTo(CGSizeMake(75.0/375.0 * ZPFWidth, 60));
-//                    make.top.bottom.mas_equalTo(self.textView);
-                    make.top.mas_equalTo(15);
-                    make.left.mas_equalTo(280.0/375.0 * ZPFWidth);
-//                    make.left.mas_equalTo(290);
-//                    make.right.mas_equalTo(-15);
         
-        
-                }];
     }
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(250.0/375.0 * ZPFWidth, 70));
+        make.top.mas_equalTo(10);
+        make.left.mas_equalTo(15.0/375.0 * ZPFWidth);
+    }];
+    
+    [self.pictureImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(75.0/375.0 * ZPFWidth, 60));
+        make.top.mas_equalTo(15);
+        make.left.mas_equalTo(280.0/375.0 * ZPFWidth);
+    }];
+    
+}
 
 
 - (void)awakeFromNib {

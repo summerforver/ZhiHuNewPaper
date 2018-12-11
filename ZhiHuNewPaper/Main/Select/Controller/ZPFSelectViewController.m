@@ -15,7 +15,7 @@
 #define ZPFWidth [UIScreen mainScreen].bounds.size.width
 #define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
-@interface ZPFSelectViewController ()<WKUIDelegate, WKNavigationDelegate>
+@interface ZPFSelectViewController ()<WKUIDelegate, WKNavigationDelegate,UIScrollViewDelegate>
 
 @end
 
@@ -24,18 +24,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
+
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 10, ZPFWidth, ZPFHeight - (50.0/667.0 * ZPFHeight))];
+    
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
+    self.webView.scrollView.delegate = self;
+    
     [self.view addSubview:self.webView];
+    
     [self setStatusBarBackgroundColor:[UIColor whiteColor]];
 
     self.footView = [[UIView alloc] initWithFrame:CGRectMake(0, ZPFHeight - (40.0/667.0 * ZPFHeight), ZPFWidth, (40.0/667.0 * ZPFHeight))];
     self.footView.backgroundColor = [UIColor whiteColor];
     
-    
+//
     NSArray *picture = [NSArray arrayWithObjects:@"zuo",@"xia",@"dianzan", @"zhuanfa", @"pinglun", nil];
-    
+//
     for (int i = 0; i < 5; i++) {
         self.button = [[UIButton alloc] initWithFrame:CGRectMake((75.0 / 375 * ZPFWidth )*i + 25.0/375 * ZPFWidth, 9, 25.0/375 *ZPFWidth, 25.0/375 *ZPFWidth)];
         self.button.tag = i + 1;
@@ -48,16 +54,26 @@
         
     }
     
-//    [self.view addSubview:self.footView];
+    self.isloading = NO;
+//    self.IDStringMutableArray = [[NSMutableArray alloc] init];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pass:) name:@"pass" object:nil];
+    
     
     NSString *stringId = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%@",self.stringID];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:stringId]]];
 }
-- (void) pressButton: (UIButton *)sender {
+- (void)pressButton: (UIButton *)sender {
     
     if (sender.tag == 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+    
+    if (sender.tag == 2) {
+        
+        [self updateWebView];
+    }
+    
     if (sender.tag == 5) {
         ZPFCommentViewController *commentViewController = [[ZPFCommentViewController alloc] init];
         
@@ -65,7 +81,95 @@
         
         [self.navigationController pushViewController:commentViewController animated:YES];
     }
+
 }
+
+//- (void) pass:(NSNotification *)text {
+//    self.IDStringMutableArray = text.userInfo[@"mutableArray"];
+//
+//}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    
+    CGPoint offset = scrollView.contentOffset;
+    CGRect bounds = scrollView.bounds;
+    CGSize contentSize = scrollView.contentSize;
+    float y = offset.y + bounds.size.height;
+//    NSLog(@"-=-=-=%f",y);
+    float h = contentSize.height;
+//    NSLog(@"121212   %f",h);
+//    float reload_distance = 10;
+    
+    if (y == h) {
+        if (self.isloading) {
+            return ;
+        }  else {
+            [self updateWebView];
+           
+        }
+
+    }
+
+}
+
+- (void)updateWebView {
+    
+    if (self.section == 1) {
+        self.row ++;
+        ZPFCenterTodayJSONModel *json = [[ZPFCenterTodayJSONModel alloc] init];
+        json = self.idStringMutableArray[self.section - 1];
+        
+        if (self.row == json.stories.count) {
+            self.section ++;
+            self.row = self.row - json.stories.count;
+            
+            ZPFSelectJsonModel *json2 = [[ZPFSelectJsonModel alloc] init];
+
+            json2 = self.idStringMutableArray[self.section - 1];
+
+            self.IDstring = [json2.stories[self.row] id];
+            
+        } else {
+            self.IDstring = [json.stories[self.row] id];
+        }
+    } else {
+        
+        self.row ++;
+        
+        ZPFSelectJsonModel *json1 = [[ZPFSelectJsonModel alloc] init];
+        
+        json1 = self.idStringMutableArray[self.section - 1];
+        
+        NSLog(@"row:-----%ld", self.row);
+        NSLog(@"section:=====%ld", self.section);
+        
+        if (self.row == json1.stories.count) {
+            self.section ++;
+            self.row = self.row - json1.stories.count;
+            
+            ZPFSelectJsonModel *json3 = [[ZPFSelectJsonModel alloc] init];
+            
+            json3 = self.idStringMutableArray[self.section - 1];
+            
+            self.IDstring = [json3.stories[self.row] id];
+            
+            
+        } else {
+            self.IDstring = [json1.stories[self.row] id];
+        }
+    
+    }
+
+    
+//    NSString *string = self.IDStringMutableArray[self.row];
+
+    NSString *stringId1 = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%@",self.IDstring];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:stringId1]]];
+    
+}
+
 
 //设置状态栏颜色
 - (void)setStatusBarBackgroundColor:(UIColor *)color {
@@ -90,7 +194,8 @@
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
-    NSLog(@"页面开始加载时：%s", __FUNCTION__);
+//    NSLog(@"页面开始加载时：%s", __FUNCTION__);
+    
 //    self.myActivityIndicatorView = [[ZPFMyActivityIndicatorView alloc]init];
 //    [self.view addSubview:_myActivityIndicatorView];
 //    // 动画开始
@@ -107,7 +212,7 @@
  */
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     
-    NSLog(@"内容返回：%s", __FUNCTION__);
+//    NSLog(@"内容返回：%s", __FUNCTION__);
 }
 
 /**
@@ -118,7 +223,7 @@
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
-    NSLog(@"页面加载完成：%s", __FUNCTION__);
+//    NSLog(@"页面加载完成：%s", __FUNCTION__);
     // 动画结束
     [_myActivityIndicatorView stopAnimating];
     
@@ -134,7 +239,7 @@
  */
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     
-    NSLog(@"加载失败：%s", __FUNCTION__);
+//    NSLog(@"加载失败：%s", __FUNCTION__);
 }
 
 /**
@@ -145,7 +250,7 @@
  */
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
     
-    NSLog(@"接收到服务器跳转请求之后：%s", __FUNCTION__);
+//    NSLog(@"接收到服务器跳转请求之后：%s", __FUNCTION__);
 }
 
 /**
@@ -157,7 +262,7 @@
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     
-    NSLog(@"收到响应后，决定是否跳转");
+//    NSLog(@"收到响应后，决定是否跳转");
     
     // 如果响应的地址是百度，则允许跳转
 //    if ([navigationResponse.response.URL.host.lowercaseString isEqual:@"www.baidu.com"]) {
@@ -181,11 +286,16 @@
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    NSLog(@"发送请求之前，决定是否跳转");
-    self.myActivityIndicatorView = [[ZPFMyActivityIndicatorView alloc]init];
-    [self.view addSubview:_myActivityIndicatorView];
-    // 动画开始
-    [_myActivityIndicatorView startAnimating];
+//    NSLog(@"发送请求之前，决定是否跳转");
+    
+    
+//
+//    self.myActivityIndicatorView = [[ZPFMyActivityIndicatorView alloc]init];
+//    [self.view addSubview:_myActivityIndicatorView];
+//    // 动画开始
+//    [_myActivityIndicatorView startAnimating];
+//
+//
     
     
     // 如果请求的是百度地址，则延迟5s以后跳转

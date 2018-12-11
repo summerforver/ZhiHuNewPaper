@@ -10,20 +10,19 @@
 #import "ZPFCenterTodayJSONModel.h"
 #import "ZPFSelectJsonModel.h"
 #import "ZPFCommentJSONModel.h"
+#import "ZPFExtraCommentJSONModel.h"
 
 // 定位请求返回数据的block
 typedef void(^ZPFCenterTodayHandle)(ZPFCenterTodayJSONModel *resultModel);
 typedef void(^ZPFSelectTodayHandle)(ZPFSelectJsonModel *selectModel);
 typedef void(^ZPFCommentHandle)(ZPFCommentJSONModel *commentModel);
-
-// 获取周边point的回调block
-//typedef void(^MAPGetPointHandle)(ZPFCenterTodayJSONModel *pointModel);
-
+typedef void(^ZPFCommentHandle)(ZPFCommentJSONModel *shortCommentModel);
+typedef void(^ZPFExtraCommentHandle)(ZPFExtraCommentJSONModel *extraCommentModel);
 // 请求失败统一回调block
 typedef void(^ErrorHandle)(NSError *error);
 
-@interface ZPFHttpSessionManager : NSObject
 
+@interface ZPFHttpSessionManager : NSObject
 
 + (instancetype)sharedManager;
 
@@ -33,5 +32,9 @@ typedef void(^ErrorHandle)(NSError *error);
 - (void)fetchCoordinateDataWithPointTime:(NSString *)date succeed:(ZPFSelectTodayHandle)selectSucceedBlock error:(ErrorHandle)errorBlock;
 
 - (void)fetchLongComment:(NSString *)idString succeed:(ZPFCommentHandle)commentSucceedBlock error:(ErrorHandle)errorBlock;
+
+- (void)fetchShortComment:(NSString *)idString succeed:(ZPFCommentHandle)shortCommentSucceedBlock error:(ErrorHandle)errorBlock;
+
+- (void)fetchExtraComment:(NSString *)idString succeed:(ZPFExtraCommentHandle)extraCommentSucceedBlock error:(ErrorHandle)errorBlock;
 
 @end

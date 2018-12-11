@@ -10,6 +10,7 @@
 #import "ZPFCenterTodayJSONModel.h"
 #import "ZPFSelectJsonModel.h"
 #import "ZPFCommentJSONModel.h"
+#import "ZPFExtraCommentJSONModel.h"
 
 
 @implementation ZPFHttpSessionManager
@@ -89,4 +90,48 @@ static ZPFHttpSessionManager *manager = nil;
     
     [dataTask resume];
 }
+
+- (void)fetchShortComment:(NSString *)idString succeed:(ZPFCommentHandle)shortCommentSucceedBlock error:(ErrorHandle)errorBlock {
+    NSString *string = [NSString stringWithFormat:@"https://news-at.zhihu.com/api/4/story/%@/short-comments", idString];
+    NSString *urlString = [[NSString alloc] init];
+    urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data && error ==  nil) {
+            NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            
+            ZPFCommentJSONModel *commentShortModel = [[ZPFCommentJSONModel alloc] initWithDictionary:dic1 error:&error];
+            
+            shortCommentSucceedBlock(commentShortModel);
+            
+        } else {
+            errorBlock(error);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
+- (void)fetchExtraComment:(NSString *)idString succeed:(ZPFExtraCommentHandle)extraCommentSucceedBlock error:(ErrorHandle)errorBlock {
+    NSString *string = [NSString stringWithFormat:@"https://news-at.zhihu.com/api/4/story-extra/%@", idString];
+    NSString *urlString = [[NSString alloc] init];
+    urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data && error ==  nil) {
+            NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            
+            ZPFExtraCommentJSONModel *extraCommentModel = [[ZPFExtraCommentJSONModel alloc] initWithDictionary:dic1 error:&error];
+            extraCommentSucceedBlock(extraCommentModel);
+            
+        } else {
+            errorBlock(error);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
 @end

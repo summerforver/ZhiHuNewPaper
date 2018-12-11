@@ -17,6 +17,9 @@
 		1B1C11E0219072CB00AFB098 /* xiaoxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11DF219072CB00AFB098 /* xiaoxi.png */; };
 		1B1C11E2219072CF00AFB098 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11E1219072CF00AFB098 /* shezhi.png */; };
 		1B1F083B21952A5F0077C4CC /* ZPFHttpSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */; };
+		1B2B905C21BBEE53006075D4 /* SuperButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B905B21BBEE53006075D4 /* SuperButton.m */; };
+		1B3E34EB21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E34EA21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m */; };
+		1B3E34F121AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E34F021AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m */; };
 		1BD078CB218B113C003C6228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078CA218B113C003C6228 /* AppDelegate.m */; };
 		1BD078CE218B113C003C6228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078CD218B113C003C6228 /* ViewController.m */; };
 		1BD078D1218B113C003C6228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD078CF218B113C003C6228 /* Main.storyboard */; };
@@ -74,6 +77,12 @@
 		1B1C11E1219072CF00AFB098 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
 		1B1F083921952A5F0077C4CC /* ZPFHttpSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFHttpSessionManager.h; sourceTree = "<group>"; };
 		1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFHttpSessionManager.m; sourceTree = "<group>"; };
+		1B2B905A21BBEE53006075D4 /* SuperButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperButton.h; sourceTree = "<group>"; };
+		1B2B905B21BBEE53006075D4 /* SuperButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperButton.m; sourceTree = "<group>"; };
+		1B3E34E921AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFExtraCommentJSONModel.h; sourceTree = "<group>"; };
+		1B3E34EA21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFExtraCommentJSONModel.m; sourceTree = "<group>"; };
+		1B3E34EF21AAC2380066AB96 /* UILabel+UILabel_LabelHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+UILabel_LabelHeight.h"; sourceTree = "<group>"; };
+		1B3E34F021AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UILabel_LabelHeight.m"; sourceTree = "<group>"; };
 		1BD078C6218B113C003C6228 /* ZhiHuNewPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuNewPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD078C9218B113C003C6228 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD078CA218B113C003C6228 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +171,137 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1B04D27C21BD2A450013D1B6 /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				1B04D27D21BD2A560013D1B6 /* Model */,
+				1B04D27E21BD2A5B0013D1B6 /* View */,
+				1B04D27F21BD2A670013D1B6 /* Controller */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		1B04D27D21BD2A560013D1B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BF1BDBF21A58526003D1EAC /* ZPFCommentJSONModel.h */,
+				1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B04D27E21BD2A5B0013D1B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BEB8C1821A449860037947C /* ZPFCommentTableViewCell.h */,
+				1BEB8C1921A449860037947C /* ZPFCommentTableViewCell.m */,
+				1BF1BDB621A578D3003D1EAC /* ZPFCommentView.h */,
+				1BF1BDB721A578D3003D1EAC /* ZPFCommentView.m */,
+				1B3E34EF21AAC2380066AB96 /* UILabel+UILabel_LabelHeight.h */,
+				1B3E34F021AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B04D27F21BD2A670013D1B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BEB8C0621A42A1E0037947C /* ZPFCommentViewController.h */,
+				1BEB8C0721A42A1E0037947C /* ZPFCommentViewController.m */,
+				1BF1BDB921A57CA5003D1EAC /* ZPFWriteCommentViewController.h */,
+				1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1B04D28021BD2D820013D1B6 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				1B04D28121BD2D950013D1B6 /* Model */,
+				1B04D28221BD2D990013D1B6 /* View */,
+				1B04D28321BD2D9E0013D1B6 /* Controller */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		1B04D28121BD2D950013D1B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BD07908218B2494003C6228 /* ZPFSelectJsonModel.h */,
+				1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B04D28221BD2D990013D1B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */,
+				1BF1BDBC21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B04D28321BD2D9E0013D1B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */,
+				1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1B04D28421BD2DCE0013D1B6 /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				1B04D28521BD2DD40013D1B6 /* Model */,
+				1B04D28621BD2DD80013D1B6 /* View */,
+				1B04D28721BD2DDC0013D1B6 /* Controller */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		1B04D28521BD2DD40013D1B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BD90D7A21A270EF00682BCE /* ZPFDataUtils.h */,
+				1BD90D7B21A270EF00682BCE /* ZPFDataUtils.m */,
+				1BD07905218B21C1003C6228 /* ZPFCenterTodayJSONModel.h */,
+				1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */,
+				1B3E34E921AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.h */,
+				1B3E34EA21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m */,
+				1B1F083921952A5F0077C4CC /* ZPFHttpSessionManager.h */,
+				1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B04D28621BD2DD80013D1B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BD078F3218B20B7003C6228 /* ZPFCenterView.h */,
+				1BD078F4218B20B7003C6228 /* ZPFCenterView.m */,
+				1BD078F7218B210B003C6228 /* ZPFScrollerView.h */,
+				1BD078F8218B210B003C6228 /* ZPFScrollerView.m */,
+				1B2B905A21BBEE53006075D4 /* SuperButton.h */,
+				1B2B905B21BBEE53006075D4 /* SuperButton.m */,
+				1BD078FA218B212A003C6228 /* ZPFNewsTableViewCell.h */,
+				1BD078FB218B212A003C6228 /* ZPFNewsTableViewCell.m */,
+				1BD078FD218B2144003C6228 /* ZPFScrollerTableViewCell.h */,
+				1BD078FE218B2144003C6228 /* ZPFScrollerTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B04D28721BD2DDC0013D1B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD078E5218B1846003C6228 /* ZPFCenterViewController.h */,
+				1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1BD078BD218B113C003C6228 = {
 			isa = PBXGroup;
 			children = (
@@ -188,12 +328,12 @@
 				1BD078CA218B113C003C6228 /* AppDelegate.m */,
 				1BD078DF218B12E6003C6228 /* ZPFMainViewController.h */,
 				1BD078E0218B12E6003C6228 /* ZPFMainViewController.m */,
-				1BE6971D2191B5000045EF86 /* Left */,
-				1BD078EE218B1EFF003C6228 /* Main */,
 				1BD078EB218B1B8A003C6228 /* ZPFOtherViewController.h */,
 				1BD078EC218B1B8A003C6228 /* ZPFOtherViewController.m */,
 				1BD078CC218B113C003C6228 /* ViewController.h */,
 				1BD078CD218B113C003C6228 /* ViewController.m */,
+				1BE6971D2191B5000045EF86 /* Left */,
+				1BD078EE218B1EFF003C6228 /* Main */,
 				1BD078CF218B113C003C6228 /* Main.storyboard */,
 				1BD078D2218B1148003C6228 /* Assets.xcassets */,
 				1BD078D4218B1148003C6228 /* LaunchScreen.storyboard */,
@@ -206,32 +346,11 @@
 		1BD078EE218B1EFF003C6228 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1BD07904218B218D003C6228 /* Model */,
-				1BD078F6218B20C3003C6228 /* View */,
-				1BD078EF218B1F0E003C6228 /* Controller */,
+				1B04D28421BD2DCE0013D1B6 /* Center */,
+				1B04D28021BD2D820013D1B6 /* Select */,
+				1B04D27C21BD2A450013D1B6 /* Commit */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		1BD078EF218B1F0E003C6228 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1BD078E5218B1846003C6228 /* ZPFCenterViewController.h */,
-				1BD078E6218B1846003C6228 /* ZPFCenterViewController.m */,
-				1BD07918218B2DD1003C6228 /* ZPFSelectViewController.h */,
-				1BD07919218B2DD1003C6228 /* ZPFSelectViewController.m */,
-				1BD90D7A21A270EF00682BCE /* ZPFDataUtils.h */,
-				1BD90D7B21A270EF00682BCE /* ZPFDataUtils.m */,
-				1BEB8C0621A42A1E0037947C /* ZPFCommentViewController.h */,
-				1BEB8C0721A42A1E0037947C /* ZPFCommentViewController.m */,
-				1BF1BDB921A57CA5003D1EAC /* ZPFWriteCommentViewController.h */,
-				1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */,
-				1BEB8C1821A449860037947C /* ZPFCommentTableViewCell.h */,
-				1BEB8C1921A449860037947C /* ZPFCommentTableViewCell.m */,
-				1BF1BDBC21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.h */,
-				1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		1BD078F0218B2046003C6228 /* ZhiHuDayPaper图片 */ = {
@@ -258,38 +377,6 @@
 				1BF1BDB421A57828003D1EAC /* zan.png */,
 			);
 			path = "ZhiHuDayPaper图片";
-			sourceTree = "<group>";
-		};
-		1BD078F6218B20C3003C6228 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1BD078F3218B20B7003C6228 /* ZPFCenterView.h */,
-				1BD078F4218B20B7003C6228 /* ZPFCenterView.m */,
-				1BF1BDB621A578D3003D1EAC /* ZPFCommentView.h */,
-				1BF1BDB721A578D3003D1EAC /* ZPFCommentView.m */,
-				1BD078F7218B210B003C6228 /* ZPFScrollerView.h */,
-				1BD078F8218B210B003C6228 /* ZPFScrollerView.m */,
-				1BD078FA218B212A003C6228 /* ZPFNewsTableViewCell.h */,
-				1BD078FB218B212A003C6228 /* ZPFNewsTableViewCell.m */,
-				1BD078FD218B2144003C6228 /* ZPFScrollerTableViewCell.h */,
-				1BD078FE218B2144003C6228 /* ZPFScrollerTableViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1BD07904218B218D003C6228 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1BD07905218B21C1003C6228 /* ZPFCenterTodayJSONModel.h */,
-				1BD07906218B21C1003C6228 /* ZPFCenterTodayJSONModel.m */,
-				1BD07908218B2494003C6228 /* ZPFSelectJsonModel.h */,
-				1BD07909218B2494003C6228 /* ZPFSelectJsonModel.m */,
-				1BF1BDBF21A58526003D1EAC /* ZPFCommentJSONModel.h */,
-				1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */,
-				1B1F083921952A5F0077C4CC /* ZPFHttpSessionManager.h */,
-				1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1BD0790B218B27B5003C6228 /* 轮播图图片 */ = {
@@ -464,6 +551,9 @@
 				1BD078D9218B1148003C6228 /* main.m in Sources */,
 				1BEB8C1A21A449860037947C /* ZPFCommentTableViewCell.m in Sources */,
 				1BD078E7218B1846003C6228 /* ZPFCenterViewController.m in Sources */,
+				1B3E34EB21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m in Sources */,
+				1B3E34F121AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m in Sources */,
+				1B2B905C21BBEE53006075D4 /* SuperButton.m in Sources */,
 				1BD90D7C21A270EF00682BCE /* ZPFDataUtils.m in Sources */,
 				1BD078E4218B130C003C6228 /* ZPFLeftViewController.m in Sources */,
 				1BF1BDBB21A57CA5003D1EAC /* ZPFWriteCommentViewController.m in Sources */,

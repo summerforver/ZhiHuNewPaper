@@ -26,17 +26,15 @@
         self.centerTodayJsonModel = [[ZPFCenterTodayJSONModel alloc] init];
 //        self.selectJsonModel = [[ZPFSelectJsonModel alloc] init];
         self.selectJsonModel = [[ZPFSelectJsonModel alloc] init];
-        self.array = [[NSMutableArray alloc] init];
+//        self.array = [[NSMutableArray alloc] init];
+        self.mutableArray = [[NSMutableArray alloc] init];
         [self initView];
     }
     return self;
 }
 
-
-
 - (void)initView {
-    
-    
+
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ZPFWidth, ZPFHeight) style:UITableViewStylePlain];
     
     self.tableView.dataSource = self;
@@ -48,8 +46,15 @@
     
 //    self.tableView.alwaysBounceVertical = NO;
     //下拉上拉不越界
-    self.tableView.bounces = NO;
+//    self.tableView.bounces = NO;
     [self addSubview:self.tableView];
+    
+    
+    
+    UIRefreshControl *freshControl = [[UIRefreshControl alloc] init];
+
+    freshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"努力加载中"];
+    freshControl.tintColor = [UIColor blueColor];
 
 }
 
@@ -59,7 +64,6 @@
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]];
     pictureImage = [UIImage imageWithData:data];
     return pictureImage;
-
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -85,27 +89,13 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//
-//    int intString = [self.centerTodayJsonModel.date intValue] - 1;
-//    NSString *stringInt = [NSString stringWithFormat:@"%d", intString];
-//
-//    int instring1 = [self.selectJsonModel.date intValue];
-//    NSString *stringInt1 = [NSString stringWithFormat:@"%d", instring1];
-//
-//    if (section == 2) {
-//        return stringInt;
-//    } else {
-//        return stringInt1;
-//    }
-    
+  
     return [ZPFDataUtils dateStringBeforeDays1:1-section];
 
-
-    
-    
 }
 
 - (void)scrollerPictureImage {
+    
     NSMutableArray *mutableArray = [NSMutableArray array];
     NSArray *array2 = self.centerTodayJsonModel.top_stories;
     for (int i = 0; i < array2.count; i++) {
@@ -113,8 +103,20 @@
         [mutableArray addObject:[self image:string]];
     }
     self.scrollerView.images = [NSArray arrayWithArray:mutableArray];
+
+    
+    NSMutableArray *titleMutableArray = [NSMutableArray array];
+    NSArray *array3 = self.centerTodayJsonModel.top_stories;
+    for (int i = 0; i < array3.count; i++) {
+        NSString *string1 = [array3[i] zpfTitle];
+        [titleMutableArray addObject:string1];
+    }
+    self.scrollerView.titleArray = [NSArray arrayWithArray:titleMutableArray];
+    
     
 }
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,13 +139,20 @@
         cell2.label.text = [self.centerTodayJsonModel.stories[indexPath.row] title];
 
         NSArray *array = [self.centerTodayJsonModel.stories[indexPath.row] images];
+        
+        NSMutableArray *array1 = [[NSMutableArray alloc] init];
+        NSString *string = [self.centerTodayJsonModel.stories[indexPath.row] id];
+        [array1 addObject:string];
+//        [self.mutableArray addObjectsFromArray:array1];
+//        [self.mutableArray addObject:array1];
+        [self.mutableArray addObjectsFromArray:array1];
+        
+        
 //        NSString *urlString = array[0];
 //        cell2.pictureImageView.image = [self image:urlString];
         
         [cell2.pictureImageView sd_setImageWithURL:[NSURL URLWithString:array[0]]];
-        
-        
-        
+ 
         
         cell2.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell2;
@@ -153,7 +162,18 @@
         cell3.label.text = [self.selectJsonModel.stories[indexPath.row] title];
         
         NSArray *array3 = [self.selectJsonModel.stories[indexPath.row] images];
-//        NSString *urlString1 = array3[0];
+        
+        NSMutableArray *array2 = [[NSMutableArray alloc] init];
+        NSString *string1 = [self.selectJsonModel.stories[indexPath.row] id];
+        [array2 addObject:string1];
+        
+//        [self.mutableArray addObjectsFromArray:array2];
+        
+//        [self.mutableArray addObject:array2];
+        [self.mutableArray addObjectsFromArray:array2];
+        
+        
+        //        NSString *urlString1 = array3[0];
 //        cell3.pictureImageView.image = [self image:urlString1];
 //
         [cell3.pictureImageView sd_setImageWithURL:[NSURL URLWithString:array3[0]]];

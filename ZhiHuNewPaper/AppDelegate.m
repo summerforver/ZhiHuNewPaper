@@ -25,7 +25,7 @@
     /**窗口的设置*/
     [self setWindow:[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds]];
     /**根视图控制器*/
-    [self.window setRootViewController:[[ZPFMainViewController alloc]init]];
+    [self.window setRootViewController:[[ZPFMainViewController alloc] init]];
     /**显示*/
     [self.window makeKeyAndVisible];
     

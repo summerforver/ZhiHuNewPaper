@@ -14,9 +14,16 @@
 @interface ZPFSelectViewController : UIViewController
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, copy) NSString *stringID;
+@property (nonatomic, copy) NSString *IDstring;
 @property (nonatomic, strong) UIButton *button;
 
 @property (nonatomic, strong) UIView *footView;
 @property (nonatomic, strong) ZPFMyActivityIndicatorView *myActivityIndicatorView;
+@property BOOL isloading;
+
+@property NSInteger section;
+@property NSInteger row;
+@property (nonatomic, strong) NSMutableArray *IDStringMutableArray;
+@property (nonatomic, strong) NSMutableArray *idStringMutableArray;
 
 @end
