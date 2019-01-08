@@ -3,5 +3,6 @@ target 'ZhiHuNewPaper' do
 pod 'Masonry'
 pod 'JSONModel'
 pod 'SDWebImage'
+pod 'FMDB'
 end
 

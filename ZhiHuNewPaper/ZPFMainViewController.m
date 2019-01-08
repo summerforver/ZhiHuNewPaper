@@ -67,6 +67,9 @@
   
 }
 
+
+
+
 /**完成控制器的添加和移除*/
 -(void)setContentController:(UIViewController *)contentController
 {
@@ -122,6 +125,8 @@
         
     }];
     
+    
+ 
     
 }
 /**代理方法的实现*/

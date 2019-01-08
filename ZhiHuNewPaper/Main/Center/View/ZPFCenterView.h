@@ -20,11 +20,19 @@
 
 @property (nonatomic, copy) NSString *headViewDateString;
 @property (nonatomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSMutableArray *dataWithImageArray;
+@property (nonatomic, strong) NSMutableArray *imageStringArray;
+@property (nonatomic, strong) NSMutableArray *titleMutableArray;
 
 @property (nonatomic, strong) NSMutableArray *mutableArray;
-
+//@property (nonatomic, strong) NSArray *headImageArray;
 @property int intstring;
+@property int count;
 @property(nonatomic, assign) NSInteger datas;
+
+@property int isInternet;
 
 - (void)scrollerPictureImage;
 //- (void)scrollerPictureTitle;

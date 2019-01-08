@@ -19,4 +19,8 @@
 @property (nonatomic, weak) id <LeftControllerDelegate> delegate;
 @property (nonatomic, strong) ZPFLeftView *leftView;
 
+@property (nonatomic, copy) NSString *stringID;
+@property (nonatomic, copy) NSString *stringTitle;
+@property (nonatomic, copy) NSString *stringImage;
+
 @end

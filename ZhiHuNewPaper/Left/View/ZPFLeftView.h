@@ -13,4 +13,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIButton *collectButton;
+@property (nonatomic, strong) UIButton *messageButton;
+@property (nonatomic, strong) UIButton *shezhiButton;
 @end

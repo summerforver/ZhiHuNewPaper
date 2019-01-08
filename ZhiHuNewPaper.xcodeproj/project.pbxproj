@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0B8ABF21D52B0700FC9A57 /* LHDateHeadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B8ABE21D52B0700FC9A57 /* LHDateHeadManager.m */; };
 		1B0BAEBB2198643800FF50FD /* ZPFFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBA2198643800FF50FD /* ZPFFooterView.m */; };
 		1B0BAEBD21986A2000FF50FD /* yejianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBC21986A1F00FF50FD /* yejianmoshi.png */; };
 		1B0BAEBF21986A2500FF50FD /* lixian.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B0BAEBE21986A2500FF50FD /* lixian.png */; };
@@ -17,9 +18,13 @@
 		1B1C11E0219072CB00AFB098 /* xiaoxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11DF219072CB00AFB098 /* xiaoxi.png */; };
 		1B1C11E2219072CF00AFB098 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C11E1219072CF00AFB098 /* shezhi.png */; };
 		1B1F083B21952A5F0077C4CC /* ZPFHttpSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */; };
+		1B2A603E21D709C700990F36 /* LHDateScrollerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A603D21D709C700990F36 /* LHDateScrollerManager.m */; };
 		1B2B905C21BBEE53006075D4 /* SuperButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B905B21BBEE53006075D4 /* SuperButton.m */; };
 		1B3E34EB21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E34EA21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m */; };
 		1B3E34F121AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E34F021AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m */; };
+		1B3FDD2321C7C1CC0044AB37 /* LHDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FDD2221C7C1CC0044AB37 /* LHDataBaseManager.m */; };
+		1BBA928E21C6845B00E2BA42 /* ZPFFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA928D21C6845B00E2BA42 /* ZPFFMDB.m */; };
+		1BBAD19221C352F50064C2B9 /* ZPFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD19121C352F50064C2B9 /* ZPFCollectViewController.m */; };
 		1BD078CB218B113C003C6228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078CA218B113C003C6228 /* AppDelegate.m */; };
 		1BD078CE218B113C003C6228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD078CD218B113C003C6228 /* ViewController.m */; };
 		1BD078D1218B113C003C6228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD078CF218B113C003C6228 /* Main.storyboard */; };
@@ -60,10 +65,13 @@
 		1BF1BDBB21A57CA5003D1EAC /* ZPFWriteCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDBA21A57CA5003D1EAC /* ZPFWriteCommentViewController.m */; };
 		1BF1BDBE21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */; };
 		1BF1BDC121A58526003D1EAC /* ZPFCommentJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */; };
+		1BF8779421BFECDA008DE9E9 /* ZPFShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF8779321BFECDA008DE9E9 /* ZPFShareView.m */; };
 		20991D8B6765C01A7D5B4F00 /* libPods-ZhiHuNewPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0B8ABD21D52B0700FC9A57 /* LHDateHeadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDateHeadManager.h; sourceTree = "<group>"; };
+		1B0B8ABE21D52B0700FC9A57 /* LHDateHeadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDateHeadManager.m; sourceTree = "<group>"; };
 		1B0BAEB92198643800FF50FD /* ZPFFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFFooterView.h; sourceTree = "<group>"; };
 		1B0BAEBA2198643800FF50FD /* ZPFFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFFooterView.m; sourceTree = "<group>"; };
 		1B0BAEBC21986A1F00FF50FD /* yejianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejianmoshi.png; sourceTree = "<group>"; };
@@ -77,12 +85,20 @@
 		1B1C11E1219072CF00AFB098 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
 		1B1F083921952A5F0077C4CC /* ZPFHttpSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFHttpSessionManager.h; sourceTree = "<group>"; };
 		1B1F083A21952A5F0077C4CC /* ZPFHttpSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFHttpSessionManager.m; sourceTree = "<group>"; };
+		1B2A603C21D709C700990F36 /* LHDateScrollerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDateScrollerManager.h; sourceTree = "<group>"; };
+		1B2A603D21D709C700990F36 /* LHDateScrollerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDateScrollerManager.m; sourceTree = "<group>"; };
 		1B2B905A21BBEE53006075D4 /* SuperButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperButton.h; sourceTree = "<group>"; };
 		1B2B905B21BBEE53006075D4 /* SuperButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperButton.m; sourceTree = "<group>"; };
 		1B3E34E921AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFExtraCommentJSONModel.h; sourceTree = "<group>"; };
 		1B3E34EA21AA8B6E0066AB96 /* ZPFExtraCommentJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFExtraCommentJSONModel.m; sourceTree = "<group>"; };
 		1B3E34EF21AAC2380066AB96 /* UILabel+UILabel_LabelHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+UILabel_LabelHeight.h"; sourceTree = "<group>"; };
 		1B3E34F021AAC2380066AB96 /* UILabel+UILabel_LabelHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UILabel_LabelHeight.m"; sourceTree = "<group>"; };
+		1B3FDD2121C7C1CC0044AB37 /* LHDataBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDataBaseManager.h; sourceTree = "<group>"; };
+		1B3FDD2221C7C1CC0044AB37 /* LHDataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDataBaseManager.m; sourceTree = "<group>"; };
+		1BBA928C21C6845B00E2BA42 /* ZPFFMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFFMDB.h; sourceTree = "<group>"; };
+		1BBA928D21C6845B00E2BA42 /* ZPFFMDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFFMDB.m; sourceTree = "<group>"; };
+		1BBAD19021C352F50064C2B9 /* ZPFCollectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCollectViewController.h; sourceTree = "<group>"; };
+		1BBAD19121C352F50064C2B9 /* ZPFCollectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCollectViewController.m; sourceTree = "<group>"; };
 		1BD078C6218B113C003C6228 /* ZhiHuNewPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuNewPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD078C9218B113C003C6228 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD078CA218B113C003C6228 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +161,8 @@
 		1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFMyActivityIndicatorView.m; sourceTree = "<group>"; };
 		1BF1BDBF21A58526003D1EAC /* ZPFCommentJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFCommentJSONModel.h; sourceTree = "<group>"; };
 		1BF1BDC021A58526003D1EAC /* ZPFCommentJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFCommentJSONModel.m; sourceTree = "<group>"; };
+		1BF8779221BFECDA008DE9E9 /* ZPFShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPFShareView.h; sourceTree = "<group>"; };
+		1BF8779321BFECDA008DE9E9 /* ZPFShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPFShareView.m; sourceTree = "<group>"; };
 		A065164CF4186E6454E675C5 /* libPods-ZhiHuNewPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHuNewPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A0DA8FF5BC7637B444FEA9 /* Pods-ZhiHuNewPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.debug.xcconfig"; sourceTree = "<group>"; };
 		FDA26D57BFBA193D98052514 /* Pods-ZhiHuNewPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNewPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNewPaper/Pods-ZhiHuNewPaper.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +254,8 @@
 		1B04D28221BD2D990013D1B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1BF8779221BFECDA008DE9E9 /* ZPFShareView.h */,
+				1BF8779321BFECDA008DE9E9 /* ZPFShareView.m */,
 				1BF1BDBD21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m */,
 				1BF1BDBC21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.h */,
 			);
@@ -346,6 +366,14 @@
 		1BD078EE218B1EFF003C6228 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1BBA928C21C6845B00E2BA42 /* ZPFFMDB.h */,
+				1BBA928D21C6845B00E2BA42 /* ZPFFMDB.m */,
+				1B3FDD2121C7C1CC0044AB37 /* LHDataBaseManager.h */,
+				1B3FDD2221C7C1CC0044AB37 /* LHDataBaseManager.m */,
+				1B0B8ABD21D52B0700FC9A57 /* LHDateHeadManager.h */,
+				1B0B8ABE21D52B0700FC9A57 /* LHDateHeadManager.m */,
+				1B2A603C21D709C700990F36 /* LHDateScrollerManager.h */,
+				1B2A603D21D709C700990F36 /* LHDateScrollerManager.m */,
 				1B04D28421BD2DCE0013D1B6 /* Center */,
 				1B04D28021BD2D820013D1B6 /* Select */,
 				1B04D27C21BD2A450013D1B6 /* Commit */,
@@ -416,6 +444,8 @@
 			children = (
 				1BD078E2218B130C003C6228 /* ZPFLeftViewController.h */,
 				1BD078E3218B130C003C6228 /* ZPFLeftViewController.m */,
+				1BBAD19021C352F50064C2B9 /* ZPFCollectViewController.h */,
+				1BBAD19121C352F50064C2B9 /* ZPFCollectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -546,6 +576,7 @@
 				1BD078FF218B2144003C6228 /* ZPFScrollerTableViewCell.m in Sources */,
 				1BD078ED218B1B8A003C6228 /* ZPFOtherViewController.m in Sources */,
 				1BD078CE218B113C003C6228 /* ViewController.m in Sources */,
+				1B2A603E21D709C700990F36 /* LHDateScrollerManager.m in Sources */,
 				1BEB8C0821A42A1E0037947C /* ZPFCommentViewController.m in Sources */,
 				1BD0791A218B2DD1003C6228 /* ZPFSelectViewController.m in Sources */,
 				1BD078D9218B1148003C6228 /* main.m in Sources */,
@@ -556,14 +587,19 @@
 				1B2B905C21BBEE53006075D4 /* SuperButton.m in Sources */,
 				1BD90D7C21A270EF00682BCE /* ZPFDataUtils.m in Sources */,
 				1BD078E4218B130C003C6228 /* ZPFLeftViewController.m in Sources */,
+				1B0B8ABF21D52B0700FC9A57 /* LHDateHeadManager.m in Sources */,
 				1BF1BDBB21A57CA5003D1EAC /* ZPFWriteCommentViewController.m in Sources */,
 				1B0BAEBB2198643800FF50FD /* ZPFFooterView.m in Sources */,
 				1BD078FC218B212A003C6228 /* ZPFNewsTableViewCell.m in Sources */,
 				1BD078E1218B12E6003C6228 /* ZPFMainViewController.m in Sources */,
 				1BD0790A218B2494003C6228 /* ZPFSelectJsonModel.m in Sources */,
+				1B3FDD2321C7C1CC0044AB37 /* LHDataBaseManager.m in Sources */,
 				1B1F083B21952A5F0077C4CC /* ZPFHttpSessionManager.m in Sources */,
+				1BF8779421BFECDA008DE9E9 /* ZPFShareView.m in Sources */,
 				1BD078F5218B20B7003C6228 /* ZPFCenterView.m in Sources */,
+				1BBA928E21C6845B00E2BA42 /* ZPFFMDB.m in Sources */,
 				1BF1BDBE21A57FCE003D1EAC /* ZPFMyActivityIndicatorView.m in Sources */,
+				1BBAD19221C352F50064C2B9 /* ZPFCollectViewController.m in Sources */,
 				1BD07907218B21C1003C6228 /* ZPFCenterTodayJSONModel.m in Sources */,
 				1BF1BDC121A58526003D1EAC /* ZPFCommentJSONModel.m in Sources */,
 				1BD078CB218B113C003C6228 /* AppDelegate.m in Sources */,

@@ -155,7 +155,7 @@
     [cell.pictureImageView sd_setImageWithURL:[NSURL URLWithString:mutableString]];
     [cell.zanButton setTitle:[model.comments[indexPath.row] likes] forState:UIControlStateNormal];
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)pressOpenButton:(UIButton *)sender {

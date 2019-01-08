@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "ZPFCommentViewController.h"
 #import "ZPFMyActivityIndicatorView.h"
+#import "ZPFShareView.h"
 
 #define ZPFWidth [UIScreen mainScreen].bounds.size.width
 #define ZPFHeight [UIScreen mainScreen].bounds.size.height
@@ -48,6 +49,13 @@
         
         [self.button setImage:[UIImage imageNamed:picture[i]] forState:UIControlStateNormal];
         
+        
+//        if (i == 2) {
+//            [self.button setTitle:@"12" forState:UIControlStateNormal];
+//            [self.button setTitleEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 0)];
+//        }
+        
+
         [self.footView addSubview:self.button];
         
         [self.button addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,6 +82,16 @@
         [self updateWebView];
     }
     
+    if (sender.tag == 4) {
+        self.shareView = [[ZPFShareView alloc] initWithFrame:CGRectMake(0, ZPFHeight/2, ZPFWidth, ZPFHeight/2)];
+        self.shareView.backgroundColor = [UIColor colorWithRed:0.96f green:0.96f blue:0.97f alpha:1.00f];
+        
+        [self.view addSubview:self.shareView];
+        
+        [self.shareView.deleteButton addTarget:self action:@selector(pressDeleteButton) forControlEvents:UIControlEventTouchUpInside];
+        [self.shareView.shareButton addTarget:self action:@selector(pressShareButtnon) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
     if (sender.tag == 5) {
         ZPFCommentViewController *commentViewController = [[ZPFCommentViewController alloc] init];
         
@@ -84,10 +102,42 @@
 
 }
 
+- (void)pressDeleteButton {
+    [self.shareView removeFromSuperview];
+    
+}
+
+- (void)pressShareButtnon {
+    
+    [self.shareView removeFromSuperview];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(ZPFWidth/2 - 50, ZPFHeight/2 - 50 , 100, 100)];
+    label.text = @"已收藏";
+    label.backgroundColor = [UIColor lightGrayColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:17.0];
+    label.layer.masksToBounds = YES;
+    label.layer.cornerRadius = 5;
+    
+    [self.view addSubview:label];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        label.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        // 动画完毕从父视图移除
+        [label removeFromSuperview];
+    }];
+    
+    NSDictionary *dic = @{@"string": self.stringID, @"titleString": self.titleString, @"imageString": self.imageString};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pass" object:nil userInfo:dic];
+}
+
 //- (void) pass:(NSNotification *)text {
 //    self.IDStringMutableArray = text.userInfo[@"mutableArray"];
 //
 //}
+
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -101,15 +151,26 @@
 //    NSLog(@"121212   %f",h);
 //    float reload_distance = 10;
     
-    if (y == h) {
-        if (self.isloading) {
-            return ;
-        }  else {
-            [self updateWebView];
-           
+        if (y == h) {
+            if (self.isloading) {
+                return ;
+            }  else {
+                [self updateWebView];
+                
+            }
         }
+    
+//    if (y > h + reload_distance && scrollView.contentSize.height != 0) {
+//        if (self.isloading) {
+//            return ;
+//        }  else {
+//            [self updateWebView];
+//
+//        }
+//
+//    }
+//
 
-    }
 
 }
 
@@ -289,13 +350,13 @@
 //    NSLog(@"发送请求之前，决定是否跳转");
     
     
-//
-//    self.myActivityIndicatorView = [[ZPFMyActivityIndicatorView alloc]init];
-//    [self.view addSubview:_myActivityIndicatorView];
-//    // 动画开始
-//    [_myActivityIndicatorView startAnimating];
-//
-//
+
+    self.myActivityIndicatorView = [[ZPFMyActivityIndicatorView alloc]init];
+    [self.view addSubview:_myActivityIndicatorView];
+    // 动画开始
+    [_myActivityIndicatorView startAnimating];
+
+
     
     
     // 如果请求的是百度地址，则延迟5s以后跳转

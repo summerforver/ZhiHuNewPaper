@@ -43,10 +43,6 @@
     
     [self addSubview:self.tableView];
     
-    
-    
-   
-    
 
 }
 
@@ -136,26 +132,54 @@
             
             
             NSArray *titleArray = [NSArray arrayWithObjects:@"收藏", @"消息", @"设置", nil];
-            NSArray *pictureArray = [NSArray arrayWithObjects:@"shoucang",@"xiaoxi",@"shezhi", nil];
+//            NSArray *pictureArray = [NSArray arrayWithObjects:@"shoucang",@"xiaoxi",@"shezhi", nil];
+            
+            
+            self.collectButton = [[UIButton alloc] initWithFrame:CGRectMake(70*0 + 22, 7, 20, 20)];
+            self.collectButton.tag = 0 + 1;
+            
+//            NSLog(@"%ld",self.collectButton.tag);
+     
+            
+            [self.collectButton setImage:[UIImage imageNamed:@"shoucang"] forState:UIControlStateNormal];
+            
+            self.messageButton = [[UIButton alloc] initWithFrame:CGRectMake(70*1 + 22, 7, 20, 20)];
+            self.messageButton.tag = 1 + 1;
+            
+//            NSLog(@"%ld",self.collectButton.tag);
+            
+            [self.messageButton setImage:[UIImage imageNamed:@"xiaoxi"] forState:UIControlStateNormal];
+            
+            self.shezhiButton = [[UIButton alloc] initWithFrame:CGRectMake(70*2 + 22, 7, 20, 20)];
+            self.shezhiButton.tag = 2 + 1;
+            
+//            NSLog(@"%ld",self.collectButton.tag);
+            
+            [self.shezhiButton setImage:[UIImage imageNamed:@"shezhi"] forState:UIControlStateNormal];
             
             for (int i = 0; i < 3; i++) {
-                
-                
-                UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(70*i + 22, 7, 20, 20)];
-               
-                [button1 setImage:[UIImage imageNamed:pictureArray[i]] forState:UIControlStateNormal];
-                
+
+
+//                self.collectButton = [[UIButton alloc] initWithFrame:CGRectMake(70*i + 22, 7, 20, 20)];
+//                self.collectButton.tag = i + 1;
+//
+//                NSLog(@"%ld",self.collectButton.tag);
+//
+//                [self.collectButton setImage:[UIImage imageNamed:pictureArray[i]] forState:UIControlStateNormal];
+
                 UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(70*i + 20, 32, 30, 15)];
                 label1.textColor = [UIColor colorWithRed:0.53f green:0.55f blue:0.56f alpha:1.00f];;
                 label1.font = [UIFont systemFontOfSize:11.0];
                 label1.text = titleArray[i];
-                
-                [cell1 addSubview:button1];
+
+//                [cell1 addSubview:self.collectButton];
                 [cell1 addSubview:label1];
-                
+
             }
             
-        
+            [cell1 addSubview:self.collectButton];
+            [cell1 addSubview:self.messageButton];
+            [cell1 addSubview:self.shezhiButton];
             
         }
         return cell1;

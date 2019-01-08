@@ -10,6 +10,7 @@
 #import <Masonry.h>
 #import "ZPFLeftView.h"
 #import "ZPFCenterViewController.h"
+#import "ZPFCollectViewController.h"
 #define ZPFWidth [UIScreen mainScreen].bounds.size.width
 #define ZPFHeight [UIScreen mainScreen].bounds.size.height
 
@@ -38,7 +39,20 @@
     
     [self.view addSubview:self.leftView];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pass1:) name:@"pass1" object:nil];
+    
 }
+
+- (void)pass1:(NSNotification *)text {
+    self.stringID = text.userInfo[@"string1"];
+    self.stringTitle = text.userInfo[@"titleString"];
+    self.stringImage = text.userInfo[@"imageString"];
+//
+//    NSLog(@"-----%@", self.stringID);
+//    NSLog(@"-----%@", self.stringTitle);
+//    NSLog(@"-----%@", self.stringImage);
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,13 +70,39 @@
 }
 
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    ZPFCenterViewController *viewController = [[ZPFCenterViewController alloc] init];
 //    if (indexPath.section == 2) {
 //        [self.navigationController pushViewController:viewController animated:YES];
 //    }
-//    
-//}
+    
+    NSLog(@"----%ld-----%ld",indexPath.section,self.leftView.collectButton.tag);
+    if (indexPath.section == 1 && self.leftView.collectButton.tag == 1) {
+        [self.leftView.collectButton addTarget:self action:@selector(pressCollectButton) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+}
+
+- (void)pressCollectButton {
+    
+    NSLog(@"456");
+   
+    
+    ZPFCollectViewController *collectController = [[ZPFCollectViewController alloc] init];
+    
+//    [self.navigationController pushViewController:collectController animated:YES];
+//     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:collectController];
+    
+//    [self presentViewController:navigationController animated:YES completion:nil];
+    [self presentViewController:collectController animated:YES completion:nil];
+    
+    
+    NSDictionary *dic = @{@"string2":self.stringID, @"title": self.stringTitle, @"image": self.stringImage};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pass2" object:nil userInfo:dic];
+    
+
+}
 
 //- (void)leftButtonSelected:(UIButton *)sender {
 //    if ([self.delegate respondsToSelector:@selector(leftController:didSelectItemAtIndex:)]) {

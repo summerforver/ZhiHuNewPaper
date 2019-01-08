@@ -12,8 +12,6 @@
 #import <Masonry.h>
 #import "ZPFCenterTodayJSONModel.h"
 #import "ZPFSelectViewController.h"
-
-#import <Masonry.h>
 #import "ZPFNewsTableViewCell.h"
 #import "ZPFScrollerTableViewCell.h"
 #import "JSONModel.h"
@@ -21,6 +19,10 @@
 #import "ZPFSelectJsonModel.h"
 #import "ZPFHttpSessionManager.h"
 #import "ZPFDataUtils.h"
+#import "ZPFFMDB.h"
+#import "LHDataBaseManager.h"
+#import "LHDateHeadManager.h"
+#import "LHDateScrollerManager.h"
 
 #define ZPFWidth [UIScreen mainScreen].bounds.size.width
 #define ZPFHeight [UIScreen mainScreen].bounds.size.height
@@ -63,22 +65,35 @@
     
    
     
-
     self.mutableArray = [[NSMutableArray alloc] init];
     self.centerView.array = self.mutableArray;
-    
+
     self.isLoading = NO;
     
     self.centerView.intstring = self.intString;
     
+//    self.centerView.isInternet = self.Internet;
     
     self.centerView.datas = self.days;
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pass:) name:@"pass" object:nil];
+    [[LHDataBaseManager shareManager] createDataBaseAndTable];
+    [[LHDateHeadManager shareManager] createDataBaseAndTable];
+    [[LHDateScrollerManager shareManager] createDataBaseAndTable];
 }
 
 - (void)refresh:(id)sender{
     
+}
+
+- (void)pass:(NSNotification *)text {
+    self.string = text.userInfo[@"string"];
+    self.stringTitle = text.userInfo[@"titleString"];
+    self.stringImage = text.userInfo[@"imageString"];
+//    
+//    NSLog(@"=====%@", self.string);
+//    NSLog(@"=====%@", self.stringTitle);
+//    NSLog(@"=====%@", self.stringImage);
 }
 
 /**
@@ -102,26 +117,67 @@
 
 
 - (void)updateAnnotationArray {
-    
         [[ZPFHttpSessionManager sharedManager] fetchCoordinateDataWithsucceed:^(ZPFCenterTodayJSONModel *resultModel) {
             self.centerView.centerTodayJsonModel = resultModel;
-                        [self.mutableArray addObject:resultModel];
-//
-//            NSMutableArray *array = [[NSMutableArray alloc] init];
-//            [array addObject:resultModel];
-//
-//            [self.mutableArray addObjectsFromArray:array];
-//
-//            [self.mutableArray addObject:array];
-
+            [self.mutableArray addObject:resultModel];
+            
+            self.centerView.isInternet = 1;
+            
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.stories.count; i ++) {
+                NSString *string1 = [self.centerView.centerTodayJsonModel.stories[i] title];
+                [[LHDataBaseManager shareManager] deleteDataByName:string1];
+            }
+            
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.stories.count; i ++) {
+                NSString *string1 = [self.centerView.centerTodayJsonModel.stories[i] title];
+                [[LHDataBaseManager shareManager] insetName:string1];
+                
+            }
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.stories.count; i ++) {
+                NSArray *array = [self.centerView.centerTodayJsonModel.stories[i] images];
+                NSString *string = [array componentsJoinedByString:@","];
+                [[LHDateHeadManager shareManager] deleteDataByName:string];
+            }
+            
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.stories.count; i ++) {
+                NSArray *array = [self.centerView.centerTodayJsonModel.stories[i] images];
+                NSString *string = [array componentsJoinedByString:@","];
+                [[LHDateHeadManager shareManager] insetName:string];
+                
+            }
+            
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.top_stories.count; i ++) {
+                NSString *string = [self.centerView.centerTodayJsonModel.top_stories[i] zpfImage];
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:string]];
+                [[LHDateScrollerManager shareManager] deleteDataByName:data];
+            }
+            
+            for (int i = 0; i < self.centerView.centerTodayJsonModel.top_stories.count; i ++) {
+                NSString *string = [self.centerView.centerTodayJsonModel.top_stories[i] zpfImage];
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:string]];
+                [[LHDateScrollerManager shareManager] insetName:data];
+                
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.centerView.tableView reloadData];
                 [self.centerView scrollerPictureImage];
             });
         } error:^(NSError *error) {
-            NSLog(@"error:%@", error);
+//            NSLog(@"error:%@", error);
+            self.centerView.isInternet = 0;
+            self.centerView.titleArray = [[LHDataBaseManager shareManager] selectAllContent];
+            self.centerView.imageStringArray = [[LHDateHeadManager shareManager] selectAllContent];
+            self.centerView.imageArray = [[LHDateScrollerManager shareManager] selectAllContent];
+            self.centerView.count ++;
+        dispatch_async(dispatch_get_main_queue(), ^{
+                [self.centerView.tableView reloadData];
+                [self.centerView scrollerPictureImage];
+            });
         }];
 }
+
+
+
 
 - (void)updateAnnotationArray1 {
     self.isLoading = YES;
@@ -132,7 +188,24 @@
 //        NSLog(@"%@", selectModel.date);
         
         [self.mutableArray addObject:selectModel];
+        self.centerView.isInternet = 1;
         
+       
+        
+        for (int i = 0; i < self.centerView.selectJsonModel.stories.count; i ++) {
+            NSString *string1 = [self.centerView.selectJsonModel.stories[i] title];
+//            NSArray *array = [self.centerView.selectJsonModel.stories[i] images];
+//            NSString *string = [array componentsJoinedByString:@","];
+            [[LHDataBaseManager shareManager] deleteDataByName:string1];
+        }
+        
+        for (int i = 0; i < self.centerView.selectJsonModel.stories.count; i ++) {
+            NSString *string1 = [self.centerView.selectJsonModel.stories[i] title];
+//            NSArray *array = [self.centerView.selectJsonModel.stories[i] images];
+//            NSString *string = [array componentsJoinedByString:@","];
+            [[LHDataBaseManager shareManager] insetName:string1];
+            
+        }
 //
 //        NSMutableArray *array1 = [[NSMutableArray alloc] init];
 //        [array1 addObject:selectModel];
@@ -146,8 +219,18 @@
         self.isLoading = NO;
         self.days --;
     } error:^(NSError *error) {
-        NSLog(@"error:%@", error);
+//        NSLog(@"error:%@", error);
         self.isLoading = NO;
+        
+        self.centerView.isInternet = 0;
+        self.centerView.titleMutableArray = [[LHDataBaseManager shareManager] selectAllContent];
+//        [self.mutableArray addObject:self.centerView.titleMutableArray];
+        self.centerView.count ++;
+        NSLog(@"===%@",self.centerView.titleMutableArray);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.centerView.tableView reloadData];
+        });
     }];
 
     
@@ -156,8 +239,17 @@
 
 /**侧边栏的展开和关闭*/
 - (void)openCloseMenu: (UIBarButtonItem *)sender {
+    NSLog(@"123");
     [self.navigationController.parentViewController performSelector:@selector(openCloseMenu)];
+    
+//    NSDictionary *dic = @{@"string1": self.string, @"titleString": self.stringTitle, @"imageString": self.stringImage};
+//
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"pass1" object:nil userInfo:dic];
+    
+
 }
+
+
 
 
 + (UIImage *)createImageWithColor:(UIColor *)color {
@@ -248,13 +340,22 @@
 
         json = self.mutableArray[indexPath.section - 1];
         self.IDString = [json.stories[indexPath.row] id];
+        self.titleString = [json.stories[indexPath.row] title];
+        NSArray *array = [json.stories[indexPath.row] images];
+        self.imageString = [array componentsJoinedByString:@","];
     } else {
         ZPFSelectJsonModel *json1 = [[ZPFSelectJsonModel alloc] init];
         json1 = self.mutableArray[indexPath.section - 1];
         self.IDString = [json1.stories[indexPath.row] id];
+        self.titleString = [json1.stories[indexPath.row] title];
+        NSArray *array1 = [json1.stories[indexPath.row] images];
+        self.imageString = [array1 componentsJoinedByString:@","];
     }
     
     selectViewController.stringID = self.IDString;
+    selectViewController.titleString = self.titleString;
+    selectViewController.imageString = self.imageString;
+
     selectViewController.section = indexPath.section;
     selectViewController.row = indexPath.row;
     
@@ -331,6 +432,9 @@
 //    [self.centerView.tableView reloadData];
 
 }
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

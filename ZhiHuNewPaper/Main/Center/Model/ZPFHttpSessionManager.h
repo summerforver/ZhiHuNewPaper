@@ -24,6 +24,8 @@ typedef void(^ErrorHandle)(NSError *error);
 
 @interface ZPFHttpSessionManager : NSObject
 
+@property (nonatomic, strong) NSMutableArray *titleArray;
+
 + (instancetype)sharedManager;
 
 // 获取坐标点的信息方法

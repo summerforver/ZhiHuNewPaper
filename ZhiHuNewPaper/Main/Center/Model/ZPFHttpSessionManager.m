@@ -11,6 +11,7 @@
 #import "ZPFSelectJsonModel.h"
 #import "ZPFCommentJSONModel.h"
 #import "ZPFExtraCommentJSONModel.h"
+#import "LHDataBaseManager.h"
 
 
 @implementation ZPFHttpSessionManager
@@ -38,9 +39,13 @@ static ZPFHttpSessionManager *manager = nil;
                 ZPFCenterTodayJSONModel *model = [[ZPFCenterTodayJSONModel alloc] initWithDictionary:dic error:&error];
                 succeedBlock(model);
                 
+                
+                
             } else {
 //                NSLog(@"%@", error);
                 errorBlock(error);
+                
+                
             }
         }];
     

@@ -26,10 +26,18 @@
 @property (nonatomic, strong) NSMutableArray *textViewArray;
 @property (nonatomic, strong) NSMutableArray *pictureArray;
 
+
+
 @property (nonatomic, strong) NSMutableArray *mutableArray;
+
 @property BOOL isLoading;
+@property int Internet;
 @property (nonatomic, assign) NSInteger days;
 @property (nonatomic, copy) NSString *IDString;
+@property (nonatomic, copy) NSString *titleString;
+@property (nonatomic, copy) NSString *imageString;
 
-
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, copy) NSString *stringTitle;
+@property (nonatomic, copy) NSString *stringImage;
 @end
